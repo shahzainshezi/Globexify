@@ -218,18 +218,17 @@
 
         .services-stack-container {
             position: relative;
-            height: 560px;
+            display: grid;
+            align-items: center;
             overflow: visible;
         }
 
         .sticky-service-card {
-            position: absolute;
-            top: 0;
-            left: 0;
+            grid-area: 1 / 1;
             width: 100%;
             min-height: 500px;
             border-radius: 35px;
-            padding: 50px;
+            padding: 40px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
             margin-bottom: 0;
@@ -250,7 +249,7 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 15px;
             width: 100%;
         }
 
@@ -260,7 +259,7 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 24px;
-            padding: 28px;
+            padding: 20px 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -489,12 +488,19 @@
 
         /* Responsive adjustments */
         @media (max-width: 991px) {
+            .services-stack-container {
+                height: auto !important;
+            }
             .sticky-service-card {
-                position: relative;
+                position: relative !important;
                 top: 0 !important;
                 margin-bottom: 40px;
                 padding: 40px 30px;
                 min-height: auto;
+                max-height: none !important;
+                overflow: visible !important;
+                transform: none !important;
+                opacity: 1 !important;
             }
             .card-watermark {
                 font-size: 150px;
@@ -1912,55 +1918,61 @@
             const cards     = gsap.utils.toArray('.sticky-service-card');
             if (!cards.length || !section || !container) return;
 
-            // Section height provides scroll space (no pinning needed)
-            section.style.height = (cards.length * 100) + 'vh';
+            let mm = gsap.matchMedia();
 
-            // Set z-index — later cards appear on top
-            cards.forEach((card, i) => {
-                gsap.set(card, {
-                    zIndex: i + 1,
-                    transformOrigin: 'top center',
-                    y: i === 0 ? 0 : '105%'   // first card visible, rest below
+            mm.add("(min-width: 992px)", () => {
+                // Section height provides scroll space (no pinning needed)
+                section.style.height = (cards.length * 100) + 'vh';
+
+                // Set z-index — later cards appear on top
+                cards.forEach((card, i) => {
+                    gsap.set(card, {
+                        zIndex: i + 1,
+                        transformOrigin: 'top center',
+                        y: i === 0 ? 0 : '105%'   // first card visible, rest below
+                    });
                 });
-            });
 
-            // Scrubbed timeline tied to section scroll
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top top',
+                // Scrubbed timeline tied to section scroll
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: container,
+                        start: 'center center',
+                        endTrigger: section,
+                        end: 'bottom bottom',
+                        scrub: 1
+                    }
+                });
+
+                // Animate each card sliding up over the previous
+                cards.forEach((card, i) => {
+                    if (i === 0) return;
+                    const offset = i - 1;
+
+                    // Slide in current card
+                    tl.to(card, { y: 0, duration: 1, ease: 'power2.inOut' }, offset);
+
+                    // Scale back all previous cards
+                    cards.slice(0, i).forEach((prev, j) => {
+                        const depth = i - j;
+                        tl.to(prev, {
+                            scale: 1 - depth * 0.04,
+                            opacity: 1 - depth * 0.1,
+                            duration: 1,
+                            ease: 'power2.inOut'
+                        }, offset);
+                    });
+                });
+
+                // Keep the container visible (sticky) while scrolling through section
+                ScrollTrigger.create({
+                    trigger: container,
+                    start: 'center center',
+                    endTrigger: section,
                     end: 'bottom bottom',
-                    scrub: 1
-                }
-            });
-
-            // Animate each card sliding up over the previous
-            cards.forEach((card, i) => {
-                if (i === 0) return;
-                const offset = i - 1;
-
-                // Slide in current card
-                tl.to(card, { y: 0, duration: 1, ease: 'power2.inOut' }, offset);
-
-                // Scale back all previous cards
-                cards.slice(0, i).forEach((prev, j) => {
-                    const depth = i - j;
-                    tl.to(prev, {
-                        scale: 1 - depth * 0.04,
-                        opacity: 1 - depth * 0.1,
-                        duration: 1,
-                        ease: 'power2.inOut'
-                    }, offset);
+                    pin: true,
+                    pinSpacing: false
                 });
-            });
-
-            // Keep the container visible (sticky) while scrolling through section
-            ScrollTrigger.create({
-                trigger: section,
-                start: 'top top',
-                end: 'bottom bottom',
-                pin: container,
-                pinSpacing: false
             });
 
             ScrollTrigger.refresh();
