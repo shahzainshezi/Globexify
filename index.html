@@ -217,19 +217,22 @@
         }
 
         .services-stack-container {
-            display: flex;
-            flex-direction: column;
             position: relative;
+            height: 560px;
+            overflow: visible;
         }
 
         .sticky-service-card {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             min-height: 500px;
             border-radius: 35px;
             padding: 50px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            margin-bottom: 30px;
+            margin-bottom: 0;
             display: flex;
             align-items: center;
             box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4), 0 30px 60px rgba(0, 0, 0, 0.7);
@@ -1902,46 +1905,62 @@
         init();
         animate();
 
-        // Services Stack — individual card pin (most reliable with ScrollSmoother)
+        // Services Stack — absolute cards + scrubbed timeline (ScrollSmoother compatible)
         (function() {
             const section   = document.querySelector('.services-stack-section');
             const container = document.querySelector('.services-stack-container');
             const cards     = gsap.utils.toArray('.sticky-service-card');
-            if (!cards.length || !section) return;
+            if (!cards.length || !section || !container) return;
 
-            // Section needs natural height = cards × 100vh for scroll room
-            section.style.minHeight = (cards.length * 100) + 'vh';
+            // Section height provides scroll space (no pinning needed)
+            section.style.height = (cards.length * 100) + 'vh';
 
-            // Set z-index: card2 on top of card1, card3 on top of card2, etc.
+            // Set z-index — later cards appear on top
             cards.forEach((card, i) => {
-                gsap.set(card, { zIndex: i + 1, transformOrigin: 'top center' });
+                gsap.set(card, {
+                    zIndex: i + 1,
+                    transformOrigin: 'top center',
+                    y: i === 0 ? 0 : '105%'   // first card visible, rest below
+                });
             });
 
-            // Pin each card individually — they stick one on top of the next
-            cards.forEach((card, i) => {
-                ScrollTrigger.create({
-                    trigger: card,
-                    start: 'top top+=90',
-                    endTrigger: section,
+            // Scrubbed timeline tied to section scroll
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top top',
                     end: 'bottom bottom',
-                    pin: true,
-                    pinSpacing: false   // no spacer = no dark gap
-                });
-
-                // When the NEXT card starts arriving, scale this card back
-                if (i < cards.length - 1) {
-                    gsap.to(card, {
-                        scale: 0.95,
-                        opacity: 0.8,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: cards[i + 1],
-                            start: 'top top+=90',
-                            end: 'top top+=90',
-                            scrub: true
-                        }
-                    });
+                    scrub: 1
                 }
+            });
+
+            // Animate each card sliding up over the previous
+            cards.forEach((card, i) => {
+                if (i === 0) return;
+                const offset = i - 1;
+
+                // Slide in current card
+                tl.to(card, { y: 0, duration: 1, ease: 'power2.inOut' }, offset);
+
+                // Scale back all previous cards
+                cards.slice(0, i).forEach((prev, j) => {
+                    const depth = i - j;
+                    tl.to(prev, {
+                        scale: 1 - depth * 0.04,
+                        opacity: 1 - depth * 0.1,
+                        duration: 1,
+                        ease: 'power2.inOut'
+                    }, offset);
+                });
+            });
+
+            // Keep the container visible (sticky) while scrolling through section
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top top',
+                end: 'bottom bottom',
+                pin: container,
+                pinSpacing: false
             });
 
             ScrollTrigger.refresh();
