@@ -1902,63 +1902,46 @@
         init();
         animate();
 
-        // Services Stack — section-height approach (works with ScrollSmoother)
+        // Services Stack — individual card pin (most reliable with ScrollSmoother)
         (function() {
-            const section  = document.querySelector('.services-stack-section');
+            const section   = document.querySelector('.services-stack-section');
             const container = document.querySelector('.services-stack-container');
-            const cards    = gsap.utils.toArray('.sticky-service-card');
-            if (!cards.length || !container || !section) return;
+            const cards     = gsap.utils.toArray('.sticky-service-card');
+            if (!cards.length || !section) return;
 
-            // Give section explicit height so scroll space exists (no pin-spacer needed)
-            section.style.minHeight = (cards.length * 110) + 'vh';
+            // Section needs natural height = cards × 100vh for scroll room
+            section.style.minHeight = (cards.length * 100) + 'vh';
 
-            // Overlay all cards in same grid cell
-            container.style.display = 'grid';
-            container.style.gridTemplateColumns = '1fr';
-            container.style.gridTemplateRows = '1fr';
-
-            // Stack cards on top of each other, later = higher z-index
-            gsap.set(cards, {
-                gridArea: '1 / 1 / 2 / 2',
-                transformOrigin: 'top center',
-                zIndex: (i, el, arr) => i + 1
-            });
-
-            // All cards except first start below screen
+            // Set z-index: card2 on top of card1, card3 on top of card2, etc.
             cards.forEach((card, i) => {
-                if (i > 0) gsap.set(card, { yPercent: 105 });
+                gsap.set(card, { zIndex: i + 1, transformOrigin: 'top center' });
             });
 
-            // Build timeline — scrubbed through the section
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: container,
-                    start: 'top top+=90px',
+            // Pin each card individually — they stick one on top of the next
+            cards.forEach((card, i) => {
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: 'top top+=90',
                     endTrigger: section,
                     end: 'bottom bottom',
                     pin: true,
-                    pinSpacing: false,   // section's own height = scroll room
-                    scrub: 1
-                }
-            });
-
-            cards.forEach((card, i) => {
-                if (i === 0) return;
-                const pos = (i - 1);
-
-                // Slide this card up
-                tl.to(card, { yPercent: 0, duration: 1, ease: 'power2.inOut' }, pos);
-
-                // Push previous cards back (scale + dim)
-                cards.slice(0, i).forEach((prev, j) => {
-                    const depth = i - j;
-                    tl.to(prev, {
-                        scale: 1 - depth * 0.035,
-                        opacity: 1 - depth * 0.12,
-                        duration: 1,
-                        ease: 'power2.inOut'
-                    }, pos);
+                    pinSpacing: false   // no spacer = no dark gap
                 });
+
+                // When the NEXT card starts arriving, scale this card back
+                if (i < cards.length - 1) {
+                    gsap.to(card, {
+                        scale: 0.95,
+                        opacity: 0.8,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: cards[i + 1],
+                            start: 'top top+=90',
+                            end: 'top top+=90',
+                            scrub: true
+                        }
+                    });
+                }
             });
 
             ScrollTrigger.refresh();
