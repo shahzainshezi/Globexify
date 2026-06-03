@@ -195,318 +195,242 @@
             }
         }
 
-        /* Sticky Services Stack Section Styles */
+        /* Services Section Styles */
         .services-stack-section {
             background: #0A0E0C;
-            padding: 100px 0 0 0;
+            padding: 120px 0;
             position: relative;
             overflow: hidden;
         }
 
-        /* Bottom fade so the pinned section blends cleanly */
-        .services-stack-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(to bottom, transparent 0%, #0A0E0C 100%);
-            pointer-events: none;
-            z-index: 100;
-        }
-
-        .services-stack-container {
-            position: relative;
-            display: grid;
-            align-items: center;
-            overflow: visible;
-        }
-
-        .sticky-service-card {
-            grid-area: 1 / 1;
-            width: 100%;
-            min-height: 500px;
-            border-radius: 35px;
-            padding: 40px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            margin-bottom: 0;
+        .services-grid-container {
             display: flex;
-            align-items: center;
-            box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4), 0 30px 60px rgba(0, 0, 0, 0.7);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
-            transform-origin: top center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 60px;
         }
 
-        /* Hover effect for cards */
-        .sticky-service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.3), 0 35px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 249, 130, 0.05);
-        }
-
-        /* Card Inner Grid - Fixed at exactly 2 columns */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            width: 100%;
-        }
-
-        .card-grid-item {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .service-grid-card {
+            flex: 0 0 calc(33.333% - 16px);
+            max-width: calc(33.333% - 16px);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 24px;
-            padding: 20px 24px;
+            padding: 40px 30px;
+            text-align: center;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: space-between;
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        .card-grid-item::before {
+        .service-grid-card > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .service-grid-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05), transparent 60%);
+            background: radial-gradient(circle at 50% 0%, rgba(59, 249, 130, 0.12), transparent 70%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease;
             pointer-events: none;
         }
 
-        .card-grid-item:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+        .service-grid-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(59, 249, 130, 0.35);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(59, 249, 130, 0.15);
         }
 
-        .card-grid-item:hover::before {
+        .service-grid-card:hover::before {
             opacity: 1;
         }
 
-        .card-grid-item .item-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            color: #fff;
+        .service-grid-card .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(59, 249, 130, 0.15) 0%, rgba(59, 249, 130, 0.03) 100%);
+            border: 1px solid rgba(59, 249, 130, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
-            font-size: 18px;
-            transition: all 0.3s ease;
+            margin-bottom: 28px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .card-grid-item:hover .item-icon {
-            background: #ffffff;
-            color: #000000;
-            transform: rotate(5deg) scale(1.05);
+        .service-grid-card:hover .icon-box {
+            background: linear-gradient(135deg, #3BF982 0%, #1bc458 100%);
+            border-color: #3BF982;
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(59, 249, 130, 0.3);
         }
 
-        .card-grid-item h4 {
-            font-size: 17px;
+        .service-grid-card .icon-box i {
+            font-size: 32px;
+            color: #3BF982;
+            transition: all 0.5s ease;
+        }
+
+        .service-grid-card:hover .icon-box i {
+            color: #0A0E0C;
+        }
+
+        .service-grid-card h3 {
+            font-size: 20px;
             font-weight: 800;
-            color: #fff;
-            margin-bottom: 8px;
-            letter-spacing: -0.3px;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            letter-spacing: -0.4px;
         }
 
-        .card-grid-item p {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.4;
+        .service-grid-card p {
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.65;
             margin: 0;
         }
 
-        .card-grid-item .item-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 16px;
-            padding-top: 12px;
+        .service-grid-card .learn-more-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
-            justify-content: space-between;
-            font-size: 11px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .service-grid-card:hover .learn-more-btn {
+            background: #3BF982;
+            color: #0A0E0C;
+            border-color: #3BF982;
+            transform: scale(1.08);
+            box-shadow: 0 5px 15px rgba(59, 249, 130, 0.4);
+        }
+
+        @media (max-width: 1199px) {
+            .service-grid-card {
+                flex: 0 0 calc(50% - 12px);
+                max-width: calc(50% - 12px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .service-grid-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 35px 25px;
+            }
+        }
+
+        /* Success Case Study Results Section Styles */
+        .result-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(59, 249, 130, 0.15);
+            border-color: #3BF982;
+        }
+
+        .result-thumb {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+        }
+
+        .result-thumb img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .result-card:hover .result-thumb img {
+            transform: scale(1.05);
+        }
+
+        .result-content {
+            text-align: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .result-content .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #15803d;
+            font-size: 12px;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.6);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
-        /* Brand Gradients and Styling */
-        .bg-amazon-card {
-            background:
-                radial-gradient(circle at 20% 30%, rgba(59, 249, 130, 0.07), transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(59, 249, 130, 0.07), transparent 40%),
-                linear-gradient(135deg, #1d211f 0%, #0d0f0e 100%);
-            border-color: rgba(255, 153, 0, 0.15);
-        }
-        .bg-amazon-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(59, 249, 130, 0.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .bg-amazon-card .card-grid-item:hover {
-            border-color: rgba(255, 153, 0, 0.3);
-            box-shadow: 0 10px 20px rgba(255, 153, 0, 0.05);
-        }
-        .bg-amazon-card .get-started-btn:hover {
-            background-color: #FF9900 !important;
-            color: #000000 !important;
-            border-color: #FF9900 !important;
+        .result-content h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 6px 0 4px 0;
+            letter-spacing: -0.5px;
         }
 
-        .bg-walmart-card {
-            background:
-                radial-gradient(circle at 20% 30%, rgba(59, 249, 130, 0.07), transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(59, 249, 130, 0.07), transparent 40%),
-                linear-gradient(135deg, #0b1a27 0%, #050b11 100%);
-            border-color: rgba(0, 113, 206, 0.15);
-        }
-        .bg-walmart-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(59, 249, 130, 0.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .bg-walmart-card .card-grid-item:hover {
-            border-color: rgba(0, 113, 206, 0.3);
-            box-shadow: 0 10px 20px rgba(0, 113, 206, 0.05);
-        }
-        .bg-walmart-card .get-started-btn:hover {
-            background-color: #0071CE !important;
-            color: #ffffff !important;
-            border-color: #0071CE !important;
+        .result-content p {
+            font-size: 13.5px;
+            color: #64748b;
+            font-weight: 600;
+            margin: 0;
         }
 
-        .bg-tiktok-card {
-            background:
-                radial-gradient(circle at 20% 30%, rgba(59, 249, 130, 0.07), transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(59, 249, 130, 0.07), transparent 40%),
-                linear-gradient(135deg, #141414 0%, #080808 100%);
-            border-color: rgba(254, 44, 85, 0.15);
-        }
-        .bg-tiktok-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(59, 249, 130, 0.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .bg-tiktok-card .card-grid-item:hover {
-            border-color: rgba(254, 44, 85, 0.3);
-            box-shadow: 0 10px 20px rgba(254, 44, 85, 0.05);
-        }
-        .bg-tiktok-card .get-started-btn:hover {
-            background-color: #FE2C55 !important;
-            color: #ffffff !important;
-            border-color: #FE2C55 !important;
+        .case-study-section::before {
+            top: 700px !important;
         }
 
-        .bg-ebay-card {
-            background:
-                radial-gradient(circle at 20% 30%, rgba(59, 249, 130, 0.07), transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(59, 249, 130, 0.07), transparent 40%),
-                linear-gradient(135deg, #0d1a29 0%, #050c14 100%);
-            border-color: rgba(134, 184, 23, 0.15);
-        }
-        .bg-ebay-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(59, 249, 130, 0.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .bg-ebay-card .card-grid-item:hover {
-            border-color: rgba(134, 184, 23, 0.3);
-            box-shadow: 0 10px 20px rgba(134, 184, 23, 0.05);
-        }
-        .bg-ebay-card .get-started-btn:hover {
-            background-color: #86B817 !important;
-            color: #ffffff !important;
-            border-color: #86B817 !important;
+        .theme-btn.btn-green {
+            background-color: #3BF982 !important;
+            color: #0A0E0C !important;
+            border-color: #3BF982 !important;
         }
 
-        .bg-etsy-card {
-            background:
-                radial-gradient(circle at 20% 30%, rgba(59, 249, 130, 0.07), transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(59, 249, 130, 0.07), transparent 40%),
-                linear-gradient(135deg, #241610 0%, #100a07 100%);
-            border-color: rgba(241, 100, 30, 0.15);
-        }
-        .bg-etsy-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(59, 249, 130, 0.08) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .bg-etsy-card .card-grid-item:hover {
-            border-color: rgba(241, 100, 30, 0.3);
-            box-shadow: 0 10px 20px rgba(241, 100, 30, 0.05);
-        }
-        .bg-etsy-card .get-started-btn:hover {
-            background-color: #F1641E !important;
-            color: #ffffff !important;
-            border-color: #F1641E !important;
+        .theme-btn.btn-green::after {
+            background-color: #ffffff !important;
         }
 
-        /* Large Background Watermark Text */
-        .card-watermark {
-            position: absolute;
-            right: -10px;
-            top: -20px;
-            font-size: 180px;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.02);
-            pointer-events: none;
-            line-height: 1;
-            font-family: 'Outfit', sans-serif;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 991px) {
-            .services-stack-container {
-                height: auto !important;
-            }
-            .sticky-service-card {
-                position: relative !important;
-                top: 0 !important;
-                margin-bottom: 40px;
-                padding: 40px 30px;
-                min-height: auto;
-                max-height: none !important;
-                overflow: visible !important;
-                transform: none !important;
-                opacity: 1 !important;
-            }
-            .card-watermark {
-                font-size: 150px;
-                right: -10px;
-                top: -30px;
-            }
+        .theme-btn.btn-green:hover {
+            color: #0A0E0C !important;
+            border-color: #ffffff !important;
         }
     </style>
 </head>
@@ -779,354 +703,88 @@
                         </a>
                     </div>
 
-                    <div class="services-stack-container mt-5">
-                        <!-- Amazon Card -->
-                        <div class="sticky-service-card bg-amazon-card">
-                            <span class="card-watermark">1</span>
-                            <div class="row align-items-center w-100 g-4">
-                                <!-- Left Side: Title and Description -->
-                                <div class="col-lg-5 p-3 p-lg-5">
-                                    <h2 class="text-white mb-3" style="font-size: 38px; font-weight: 900; line-height: 1.0; text-transform: uppercase;">Amazon FBA</h2>
-                                    <p class="text-white opacity-70 mb-4" style="font-size: 16px; line-height: 1.6;">
-                                        Navigate the world's largest marketplace with confidence. Our data-driven strategies for FBA/FBM, PPC optimization, and listing enhancement turn your Amazon store into a passive income powerhouse.
-                                    </p>
-                                    <a href="#contact" class="theme-btn get-started-btn border-white" style="background-color: #3BF982 !important; color: #000 !important; font-weight: bold; border-color: #3BF982 !important; border-radius: 50px;">
-                                        Get Started
-                                    </a>
+                    <div class="services-grid-container mt-5">
+                        <!-- Amazon FBA -->
+                        <div class="service-grid-card">
+                            <div>
+                                <div class="icon-box">
+                                    <i class="fab fa-amazon"></i>
                                 </div>
-                                <!-- Right Side: 2x2 Grid -->
-                                <div class="col-lg-7">
-                                    <div class="card-grid">
-                                        <!-- Item 1 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-shield-alt"></i></div>
-                                                <h4>Account Management</h4>
-                                                <p>End-to-end account health, suspension prevention, and brand registry optimization.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Success Rate</span>
-                                                <span style="color: #3BF982;">99% Safe</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 2 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-bullseye"></i></div>
-                                                <h4>PPC Optimization</h4>
-                                                <p>High-ROI advertising campaigns targeting lucrative organic search rankings.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>ACOS Reduction</span>
-                                                <span style="color: #3BF982;">-30% avg</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 3 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-paint-brush"></i></div>
-                                                <h4>Listing Design</h4>
-                                                <p>Premium A+ Content, photography layout, and conversion-focused copy.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>CTR Boost</span>
-                                                <span style="color: #3BF982;">+25% CTR</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 4 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-boxes"></i></div>
-                                                <h4>Inventory & Supply</h4>
-                                                <p>Optimal logistics control, stock forecasting, and FBA shipping support.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Reliability</span>
-                                                <span style="color: #3BF982;">Zero Stockout</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3>Amazon FBA</h3>
+                                <p>Navigate the world's largest marketplace with confidence. Our data-driven strategies for FBA/FBM, PPC optimization, and listing enhancement turn your Amazon store into a passive income powerhouse.</p>
+                            </div>
+                            <div class="learn-more-btn">
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
 
-                        <!-- Walmart Card -->
-                        <div class="sticky-service-card bg-walmart-card">
-                            <span class="card-watermark">2</span>
-                            <div class="row align-items-center w-100 g-4">
-                                <!-- Left Side: Title and Description -->
-                                <div class="col-lg-5 p-3 p-lg-5">
-                                    <h2 class="text-white mb-3" style="font-size: 38px; font-weight: 900; line-height: 1.0; text-transform: uppercase;">Walmart Growth</h2>
-                                    <p class="text-white opacity-70 mb-4" style="font-size: 16px; line-height: 1.6;">
-                                        Walmart Marketplace is the next frontier. We help you establish a strong presence, optimize for Walmart SEO, and leverage WFS for seamless growth and high-trust selling.
-                                    </p>
-                                    <a href="#contact" class="theme-btn get-started-btn border-white" style="background-color: #3BF982 !important; color: #000 !important; font-weight: bold; border-color: #3BF982 !important; border-radius: 50px;">
-                                        Get Started
-                                    </a>
+                        <!-- Walmart Growth -->
+                        <div class="service-grid-card">
+                            <div>
+                                <div class="icon-box">
+                                    <i class="fas fa-shopping-bag"></i>
                                 </div>
-                                <!-- Right Side: 2x2 Grid -->
-                                <div class="col-lg-7">
-                                    <div class="card-grid">
-                                        <!-- Item 1 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-shipping-fast"></i></div>
-                                                <h4>WFS Fulfillment</h4>
-                                                <p>Complete setup for Walmart Fulfillment Services to get 2-day delivery badges.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Shipping</span>
-                                                <span style="color: #0071CE;">2-Day Free</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 2 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-search"></i></div>
-                                                <h4>Walmart SEO</h4>
-                                                <p>Rank high on Walmart search engine with custom algorithmic keywords.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Rank Position</span>
-                                                <span style="color: #0071CE;">Top 5 Focus</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 3 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-ad"></i></div>
-                                                <h4>Walmart Connect</h4>
-                                                <p>Targeted sponsored product ads tailored to shoppers' search behaviors.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Roas Ratio</span>
-                                                <span style="color: #0071CE;">4.5x avg</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 4 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-id-card"></i></div>
-                                                <h4>Seller Approval</h4>
-                                                <p>Guidance through Walmart's strict seller application and verification pipeline.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Success Rate</span>
-                                                <span style="color: #0071CE;">100% Pass</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3>Walmart Growth</h3>
+                                <p>Walmart Marketplace is the next frontier. We help you establish a strong presence, optimize for Walmart SEO, and leverage WFS for seamless growth and high-trust selling.</p>
+                            </div>
+                            <div class="learn-more-btn">
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
 
-                        <!-- TikTok Shop Card -->
-                        <div class="sticky-service-card bg-tiktok-card">
-                            <span class="card-watermark">3</span>
-                            <div class="row align-items-center w-100 g-4">
-                                <!-- Left Side: Title and Description -->
-                                <div class="col-lg-5 p-3 p-lg-5">
-                                    <h2 class="text-white mb-3" style="font-size: 38px; font-weight: 900; line-height: 1.0; text-transform: uppercase;">TikTok Shop</h2>
-                                    <p class="text-white opacity-70 mb-4" style="font-size: 16px; line-height: 1.6;">
-                                        Tap into the explosive growth of social commerce. We design engaging TikTok shopfronts, manage creator affiliate marketing, and configure live shopping funnels to drive viral sales.
-                                    </p>
-                                    <a href="#contact" class="theme-btn get-started-btn border-white" style="background-color: #3BF982 !important; color: #000 !important; font-weight: bold; border-color: #3BF982 !important; border-radius: 50px;">
-                                        Get Started
-                                    </a>
+                        <!-- TikTok Shop -->
+                        <div class="service-grid-card">
+                            <div>
+                                <div class="icon-box">
+                                    <i class="fab fa-tiktok"></i>
                                 </div>
-                                <!-- Right Side: 2x2 Grid -->
-                                <div class="col-lg-7">
-                                    <div class="card-grid">
-                                        <!-- Item 1 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fab fa-tiktok"></i></div>
-                                                <h4>Shop Setup</h4>
-                                                <p>Official store creation, product catalogs syncing, and merchant verification.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Setup Time</span>
-                                                <span style="color: #FE2C55;">Instant</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 2 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-users"></i></div>
-                                                <h4>Affiliate Matching</h4>
-                                                <p>Pairing products with high-converting creators on the TikTok Affiliate Network.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Network Size</span>
-                                                <span style="color: #FE2C55;">100+ Creators</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 3 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-fire"></i></div>
-                                                <h4>Viral Marketing</h4>
-                                                <p>Creating dynamic short video hooks and strategic audio overlays for sales spikes.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Engagement</span>
-                                                <span style="color: #FE2C55;">High Viral</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 4 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-ad"></i></div>
-                                                <h4>Campaign Ads</h4>
-                                                <p>Hyper-targeted video shopping ads targeting demographics with high buy rates.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Conversion</span>
-                                                <span style="color: #FE2C55;">3.5x ROI</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3>TikTok Shop</h3>
+                                <p>Tap into the explosive growth of social commerce. We design engaging TikTok shopfronts, manage creator affiliate marketing, and configure live shopping funnels to drive viral sales.</p>
+                            </div>
+                            <div class="learn-more-btn">
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
 
-                        <!-- eBay Card -->
-                        <div class="sticky-service-card bg-ebay-card">
-                            <span class="card-watermark">4</span>
-                            <div class="row align-items-center w-100 g-4">
-                                <!-- Left Side: Title and Description -->
-                                <div class="col-lg-5 p-3 p-lg-5">
-                                    <h2 class="text-white mb-3" style="font-size: 38px; font-weight: 900; line-height: 1.0; text-transform: uppercase;">eBay Solutions</h2>
-                                    <p class="text-white opacity-70 mb-4" style="font-size: 16px; line-height: 1.6;">
-                                        Turn your eBay store into a high-converting global sales channel. From Cassini SEO-optimized listings to strategic promoted listings campaigns, we handle it all.
-                                    </p>
-                                    <a href="#contact" class="theme-btn get-started-btn border-white" style="background-color: #3BF982 !important; color: #000 !important; font-weight: bold; border-color: #3BF982 !important; border-radius: 50px;">
-                                        Get Started
-                                    </a>
+                        <!-- eBay Solutions -->
+                        <div class="service-grid-card">
+                            <div>
+                                <div class="icon-box">
+                                    <i class="fab fa-ebay"></i>
                                 </div>
-                                <!-- Right Side: 2x2 Grid -->
-                                <div class="col-lg-7">
-                                    <div class="card-grid">
-                                        <!-- Item 1 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-search"></i></div>
-                                                <h4>Cassini SEO</h4>
-                                                <p>Algorithmically structured titles, bullet features, and specifications for high ranks.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Rank Lift</span>
-                                                <span style="color: #86B817;">+40% Organic</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 2 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-tag"></i></div>
-                                                <h4>Promoted Listings</h4>
-                                                <p>Cost-effective eBay ads targeting optimal buyer categories and listings placement.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Impressions</span>
-                                                <span style="color: #86B817;">5x Boost</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 3 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-globe"></i></div>
-                                                <h4>Global Shipping</h4>
-                                                <p>Integrating eBay's international shipping program for hassle-free worldwide sales.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Reach</span>
-                                                <span style="color: #86B817;">190+ Countries</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 4 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-cogs"></i></div>
-                                                <h4>Store Management</h4>
-                                                <p>Customer service, feedback management, return resolution, and daily listing checks.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Seller Status</span>
-                                                <span style="color: #86B817;">Top Rated</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h3>eBay Solutions</h3>
+                                <p>Turn your eBay store into a high-converting global sales channel. From Cassini SEO-optimized listings to strategic promoted listings campaigns, we handle it all.</p>
+                            </div>
+                            <div class="learn-more-btn">
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
 
-                        <!-- Etsy Card -->
-                        <div class="sticky-service-card bg-etsy-card">
-                            <span class="card-watermark">5</span>
-                            <div class="row align-items-center w-100 g-4">
-                                <!-- Left Side: Title and Description -->
-                                <div class="col-lg-5 p-3 p-lg-5">
-                                    <h2 class="text-white mb-3" style="font-size: 38px; font-weight: 900; line-height: 1.0; text-transform: uppercase;">Etsy Marketing</h2>
-                                    <p class="text-white opacity-70 mb-4" style="font-size: 16px; line-height: 1.6;">
-                                        Etsy is a unique community of buyers looking for specialized custom items. We optimize tags, build compelling store profiles, and manage reviews to maximize organic traffic.
-                                    </p>
-                                    <a href="#contact" class="theme-btn get-started-btn border-white" style="background-color: #3BF982 !important; color: #000 !important; font-weight: bold; border-color: #3BF982 !important; border-radius: 50px;">
-                                        Get Started
-                                    </a>
+                        <!-- Etsy Marketing -->
+                        <div class="service-grid-card">
+                            <div>
+                                <div class="icon-box">
+                                    <i class="fab fa-etsy"></i>
                                 </div>
-                                <!-- Right Side: 2x2 Grid -->
-                                <div class="col-lg-7">
-                                    <div class="card-grid">
-                                        <!-- Item 1 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-tag"></i></div>
-                                                <h4>Custom Keyword SEO</h4>
-                                                <p>13 tag slots optimized to target ready-to-buy search queries on Etsy.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Tag Performance</span>
-                                                <span style="color: #F1641E;">Page 1 Focus</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 2 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-palette"></i></div>
-                                                <h4>Store Branding</h4>
-                                                <p>Visual shop banners, structured 'About' story, and clear FAQs for trust building.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Customer Trust</span>
-                                                <span style="color: #F1641E;">High Conversion</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 3 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-star"></i></div>
-                                                <h4>Review Building</h4>
-                                                <p>Proactive post-sale customer relationship sequences to capture 5-star reviews.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Star Seller</span>
-                                                <span style="color: #F1641E;">Top Reviews</span>
-                                            </div>
-                                        </div>
-                                        <!-- Item 4 -->
-                                        <div class="card-grid-item">
-                                            <div>
-                                                <div class="item-icon"><i class="fas fa-dollar-sign"></i></div>
-                                                <h4>Pricing Strategy</h4>
-                                                <p>Audits on competitors to price items high enough for margins and low for CTR.</p>
-                                            </div>
-                                            <div class="item-footer">
-                                                <span>Profit Margin</span>
-                                                <span style="color: #F1641E;">Maximum ROI</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <h3>Etsy Marketing</h3>
+                                <p>Etsy is a unique community of buyers looking for specialized custom items. We optimize tags, build compelling store profiles, and manage reviews to maximize organic traffic.</p>
+                            </div>
+                            <div class="learn-more-btn">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Shopify Stores -->
+                        <div class="service-grid-card">
+                            <div>
+                                <div class="icon-box">
+                                    <i class="fab fa-shopify"></i>
                                 </div>
+                                <h3>Shopify Stores</h3>
+                                <p>Build and scale a high-converting Shopify store. From premium custom theme development to product hunting, dropshipping automation, and marketing funnels that drive passive sales.</p>
+                            </div>
+                            <div class="learn-more-btn">
+                                <i class="fas fa-arrow-right"></i>
                             </div>
                         </div>
                     </div>
@@ -1230,7 +888,7 @@
                 style="background: radial-gradient(circle at 30% 20%, rgba(59, 249, 130, 0.08), transparent 40%), radial-gradient(circle at 70% 80%, rgba(59, 249, 130, 0.08), transparent 40%), #0A0E0C; position: relative; overflow: hidden; padding-bottom: 100px;">
                 <!-- Grid Pattern Overlay -->
                 <div
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(59, 249, 130, 0.1) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0;">
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 700px; background-image: radial-gradient(rgba(59, 249, 130, 0.1) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0;">
                 </div>
 
                 <!-- Marquee Section -->
@@ -1281,53 +939,87 @@
                             </p>
                         </div>
                         <div class="video-image section-padding bg-cover"
-                            style="background-image: url('https://ex-coders.com/html/exolax/assets/img/case-study/video-bg.jpg');">
+                            style="background-image: url('https://ex-coders.com/html/exolax/assets/img/case-study/video-bg.jpg'); background-attachment: scroll !important;">
                             <div class="video-button">
                                 <a href="#" class="video-icon video-popup">
                                     <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="row gx-40 gy-40">
-                            <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="project-box-items">
-                                    <div class="thumb fix">
-                                        <img src="https://plus.unsplash.com/premium_photo-1661326248013-3107a4b2bd91?q=80&w=1000"
-                                            alt="Amazon Results"
-                                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px;">
+                        <div class="row gx-4 gy-4 result-cards-container" style="margin-top: 50px;">
+                            <!-- Card 1 -->
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+                                <div class="result-card">
+                                    <div class="result-thumb">
+                                        <img src="assets/img/case-study/dashboard_client_one.png" alt="Texas Client - $63.62K">
                                     </div>
-                                    <div class="content">
-                                        <h3><a href="#">Amazon Store Automation</a></h3>
-                                        <p>MARKETPLACE MANAGEMENT</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                                <div class="project-box-items">
-                                    <div class="thumb">
-                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000"
-                                            alt="Walmart Results"
-                                            style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px;">
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="#">Walmart Scaling Results</a></h3>
-                                        <p>E-COMMERCE GROWTH</p>
+                                    <div class="result-content">
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i> Verified Statistics
+                                        </div>
+                                        <h3>$63.62K / 30 Days</h3>
+                                        <p>Hybrid FBA Client - Texas</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="project-box-items">
-                                    <div class="thumb">
-                                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1000"
-                                            alt="TikTok Shop Results"
-                                            style="width: 100%; height: 500px; object-fit: cover; border-radius: 15px;">
+                            <!-- Card 2 -->
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+                                <div class="result-card">
+                                    <div class="result-thumb">
+                                        <img src="assets/img/case-study/dashboard_client_two.png" alt="Florida Client - $61.15K">
                                     </div>
-                                    <div class="content">
-                                        <h3><a href="#">TikTok Shop & Etsy Mastery</a></h3>
-                                        <p>SOCIAL COMMERCE</p>
+                                    <div class="result-content">
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i> Verified Statistics
+                                        </div>
+                                        <h3>$61.15K / 30 Days</h3>
+                                        <p>Premium Tier - Florida</p>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Card 3 -->
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+                                <div class="result-card">
+                                    <div class="result-thumb">
+                                        <img src="assets/img/case-study/dashboard_client_three.png" alt="California Client - $50.54K">
+                                    </div>
+                                    <div class="result-content">
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i> Verified Statistics
+                                        </div>
+                                        <h3>$50.54K / 30 Days</h3>
+                                        <p>Standard Tier - California</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+                                <div class="result-card">
+                                    <div class="result-thumb">
+                                        <img src="assets/img/case-study/dashboard_client_four.png" alt="Active Account - $38.66K">
+                                    </div>
+                                    <div class="result-content">
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i> Verified Statistics
+                                        </div>
+                                        <h3>$38.66K / 30 Days</h3>
+                                        <p>Live Account - Active Now</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button at the bottom -->
+                        <div class="text-center" style="margin-top: 60px;">
+                            <a href="#contact" class="theme-btn btn-green">
+                                <span class="icon-1">
+                                    <img src="assets/img/icon/10.svg" alt="img">
+                                </span>
+                                Get Your Profit Projection On The Call
+                                <span class="icon-2">
+                                    <img src="assets/img/icon/11.svg" alt="img">
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1521,56 +1213,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="awards-area section-padding pb-0 wow fadeInUp" data-wow-delay=".3s">
-                        <h3>Awards</h3>
-                        <ul class="awars-list">
-                            <li>
-                                <span class="title-text">
-                                    Red Dot Award
-                                </span>
-                                <span class="year-text">
-                                    2020
-                                </span>
-                                <span class="text">
-                                    NY. America
-                                </span>
-                            </li>
-                            <li>
-                                <span class="title-text">
-                                    UX Design Award
-                                </span>
-                                <span class="year-text">
-                                    2022
-                                </span>
-                                <span class="text">
-                                    NY. America
-                                </span>
-                            </li>
-                            <li>
-                                <span class="title-text">
-                                    Design For Asia
-                                </span>
-                                <span class="year-text">
-                                    2023
-                                </span>
-                                <span class="text">
-                                    NY. America
-                                </span>
-                            </li>
-                            <li>
-                                <span class="title-text">
-                                    Creativepool Design Award
-                                </span>
-                                <span class="year-text">
-                                    2025
-                                </span>
-                                <span class="text">
-                                    NY. America
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </section>
 
@@ -1911,71 +1554,54 @@
         init();
         animate();
 
-        // Services Stack — absolute cards + scrubbed timeline (ScrollSmoother compatible)
+        // Staggered entrance animation for services grid cards
         (function() {
-            const section   = document.querySelector('.services-stack-section');
-            const container = document.querySelector('.services-stack-container');
-            const cards     = gsap.utils.toArray('.sticky-service-card');
-            if (!cards.length || !section || !container) return;
+            const cards = gsap.utils.toArray('.service-grid-card');
+            if (!cards.length) return;
 
-            let mm = gsap.matchMedia();
-
-            mm.add("(min-width: 992px)", () => {
-                // Section height provides scroll space (no pinning needed)
-                section.style.height = (cards.length * 100) + 'vh';
-
-                // Set z-index — later cards appear on top
-                cards.forEach((card, i) => {
-                    gsap.set(card, {
-                        zIndex: i + 1,
-                        transformOrigin: 'top center',
-                        y: i === 0 ? 0 : '105%'   // first card visible, rest below
-                    });
-                });
-
-                // Scrubbed timeline tied to section scroll
-                const tl = gsap.timeline({
+            gsap.fromTo(cards, 
+                { 
+                    y: 60, 
+                    opacity: 0 
+                }, 
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.12,
+                    ease: 'power3.out',
                     scrollTrigger: {
-                        trigger: container,
-                        start: 'center center',
-                        endTrigger: section,
-                        end: 'bottom bottom',
-                        scrub: 1
+                        trigger: '.services-grid-container',
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
                     }
-                });
+                }
+            );
+        })();
 
-                // Animate each card sliding up over the previous
-                cards.forEach((card, i) => {
-                    if (i === 0) return;
-                    const offset = i - 1;
+        // Staggered entrance animation for case study result cards
+        (function() {
+            const resultCards = gsap.utils.toArray('.result-card');
+            if (!resultCards.length) return;
 
-                    // Slide in current card
-                    tl.to(card, { y: 0, duration: 1, ease: 'power2.inOut' }, offset);
-
-                    // Scale back all previous cards
-                    cards.slice(0, i).forEach((prev, j) => {
-                        const depth = i - j;
-                        tl.to(prev, {
-                            scale: 1 - depth * 0.04,
-                            opacity: 1 - depth * 0.1,
-                            duration: 1,
-                            ease: 'power2.inOut'
-                        }, offset);
-                    });
-                });
-
-                // Keep the container visible (sticky) while scrolling through section
-                ScrollTrigger.create({
-                    trigger: container,
-                    start: 'center center',
-                    endTrigger: section,
-                    end: 'bottom bottom',
-                    pin: true,
-                    pinSpacing: false
-                });
-            });
-
-            ScrollTrigger.refresh();
+            gsap.fromTo(resultCards, 
+                { 
+                    y: 60, 
+                    opacity: 0 
+                }, 
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: '.result-cards-container',
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    }
+                }
+            );
         })();
     </script>
 </body>
