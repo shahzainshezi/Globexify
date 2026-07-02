@@ -450,33 +450,52 @@
             color: #0A0E0C !important;
             border-color: #ffffff !important;
         }
+
+        .dashboard-stat-card {
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+        }
+        .dashboard-stat-card:hover {
+            background: rgba(59, 249, 130, 0.06) !important;
+            border-color: rgba(59, 249, 130, 0.3) !important;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(59, 249, 130, 0.05) !important;
+        }
+        .dashboard-stat-card:hover .stat-icon {
+            background: #3BF982 !important;
+            color: #0A0E0C !important;
+            border-color: #3BF982 !important;
+            box-shadow: 0 0 15px rgba(59, 249, 130, 0.3) !important;
+        }
+
+        /* Brand slider uniform logo sizing */
+        .brand-slider .brand-image {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 80px !important;
+            width: 100% !important;
+            transition: all 0.3s ease !important;
+        }
+        .brand-slider .brand-image:hover {
+            filter: none !important;
+        }
+        .brand-slider .brand-image img {
+            max-height: 40px !important;
+            max-width: 130px !important;
+            width: auto !important;
+            height: auto !important;
+            object-fit: contain !important;
+            opacity: 0.85 !important;
+            transition: all 0.3s ease !important;
+        }
+        .brand-slider .brand-image:hover img {
+            opacity: 1 !important;
+            transform: scale(1.08) !important;
+        }
     </style>
 </head>
 
 <body style="background-color: #0A0E0C;">
-
-    <!-- Preloader Start -->
-    <div id="preloader" class="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0A0E0C; display: flex; align-items: center; justify-content: center; z-index: 99999;">
-        <div class="loader-content" style="text-align: center;">
-            <h1 style="font-size: 6vw; font-weight: 900; color: #3BF982; letter-spacing: 15px; text-transform: uppercase; margin: 0; animation: loaderPulse 1.5s ease-in-out infinite;">GLOBEXIFY</h1>
-            <div style="width: 100%; height: 2px; background: rgba(59, 249, 130, 0.1); margin-top: 20px; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; left: 0; height: 100%; background: #3BF982; width: 0; animation: loaderBar 2s ease-in-out infinite;"></div>
-            </div>
-            <p style="color: #fff; text-transform: uppercase; letter-spacing: 5px; font-size: 12px; margin-top: 15px; opacity: 0.6;">Initializing Systems</p>
-        </div>
-    </div>
-
-    <style>
-        @keyframes loaderPulse {
-            0%, 100% { opacity: 1; transform: scale(1); filter: blur(0px); }
-            50% { opacity: 0.7; transform: scale(1.02); filter: blur(2px); }
-        }
-        @keyframes loaderBar {
-            0% { width: 0; left: 0; }
-            50% { width: 100%; left: 0; }
-            100% { width: 0; left: 100%; }
-        }
-    </style>
 
 
 
@@ -613,9 +632,8 @@
             <!-- Hero Section Start -->
             <section class="hero-section hero-1 bg-cover"
                 style="position: relative; overflow: hidden; background-color: #090E0B;">
-                <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; opacity: 0.50;">
-                    <source src="assets/business-colleagues-discussing-project-at-office-d-2025-12-17-06-38-09-utc.mov" type="video/quicktime">
-                    <source src="assets/business-colleagues-discussing-project-at-office-d-2025-12-17-06-38-09-utc.mov" type="video/mp4">
+                <video autoplay loop muted playsinline id="hero-bg-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; pointer-events: none; opacity: 0.50;">
+                    <!-- Sources will be lazy-loaded in JS to prevent blocking initial page load -->
                 </video>
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(9, 14, 11, 0.45), rgba(9, 14, 11, 0.65)); z-index: 0; pointer-events: none;"></div>
                 <canvas id="hero-particles"
@@ -653,9 +671,14 @@
                         TikTok Shop & Etsy
                     </li>
                 </ul>
-                <div class="client-info">
+                <div class="client-info" style="display: flex; align-items: center; gap: 15px;">
                     <h4>2.5M+ <span>satisfied clients</span></h4>
-                    <img src="https://ex-coders.com/html/exolax/assets/img/hero/client-img.png" alt="img">
+                    <div class="client-avatar-stack" style="display: flex; align-items: center; margin-left: 5px;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=80&auto=format&fit=crop" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #090E0B; margin-left: 0; object-fit: cover; z-index: 4;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=80&auto=format&fit=crop" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #090E0B; margin-left: -12px; object-fit: cover; z-index: 3;">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=80&auto=format&fit=crop" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #090E0B; margin-left: -12px; object-fit: cover; z-index: 2;">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=80&auto=format&fit=crop" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #090E0B; margin-left: -12px; object-fit: cover; z-index: 1;">
+                    </div>
                 </div>
             </section>
 
@@ -666,34 +689,67 @@
                         <h4>We worked worldwide with <span class="count">200</span><span>+</span> companies </h4>
                         <div class="swiper brand-slider">
                             <div class="swiper-wrapper">
+                                <!-- Group 1 -->
                                 <div class="swiper-slide">
                                     <div class="brand-image">
-                                        <img src="assets/img/brand/01.png" alt="img">
+                                        <img src="assets/img/brand/client-brand-01.png" alt="Client Logo 1">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-image">
-                                        <img src="assets/img/brand/02.png" alt="img">
+                                        <img src="assets/img/brand/client-brand-02.png" alt="Client Logo 2">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-image">
-                                        <img src="assets/img/brand/03.png" alt="img">
+                                        <img src="assets/img/brand/client-brand-03.png" alt="Client Logo 3">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-image">
-                                        <img src="assets/img/brand/04.png" alt="img">
+                                        <img src="assets/img/brand/client-brand-04.png" alt="Client Logo 4">
+                                    </div>
+                                </div>
+                                <!-- Group 2 for seamless loop -->
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/client-brand-01.png" alt="Client Logo 1">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-image">
-                                        <img src="assets/img/brand/05.png" alt="img">
+                                        <img src="assets/img/brand/client-brand-02.png" alt="Client Logo 2">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="brand-image">
-                                        <img src="assets/img/brand/06.png" alt="img">
+                                        <img src="assets/img/brand/client-brand-03.png" alt="Client Logo 3">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/client-brand-04.png" alt="Client Logo 4">
+                                    </div>
+                                </div>
+                                <!-- Group 3 for seamless loop -->
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/client-brand-01.png" alt="Client Logo 1">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/client-brand-02.png" alt="Client Logo 2">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/client-brand-03.png" alt="Client Logo 3">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/client-brand-04.png" alt="Client Logo 4">
                                     </div>
                                 </div>
                             </div>
@@ -977,8 +1033,78 @@
                                 Our mission is to redefine boundaries, captivate audiences, & drive advancement through
                             </p>
                         </div>
-                        <div class="video-image" style="height: auto !important; position: relative; margin-top: -20px; margin-bottom: 40px; border-radius: 20px; overflow: hidden;">
-                            <img src="assets/img/case-study/our-team-bg.png" alt="Our Team" style="width: 100%; height: auto; display: block; border-radius: 20px;">
+                        <div class="sales-dashboard-container" style="background: #0A0E0C; border: 1px solid rgba(59, 249, 130, 0.15); border-radius: 24px; padding: 40px 30px; margin-top: -30px; margin-bottom: 40px; position: relative; z-index: 10; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);">
+                            <div class="row align-items-center">
+                                <!-- Left/Stats Side -->
+                                <div class="col-lg-4">
+                                    <div class="row g-3">
+                                        <!-- Stat Card 1 -->
+                                        <div class="col-sm-6 col-lg-12">
+                                            <div class="dashboard-stat-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 15px;">
+                                                <div class="stat-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(59, 249, 130, 0.1); border: 1px solid rgba(59, 249, 130, 0.2); display: flex; align-items: center; justify-content: center; color: #3BF982; font-size: 20px; transition: all 0.3s ease;">
+                                                    <i class="fa-solid fa-chart-line"></i>
+                                                </div>
+                                                <div>
+                                                    <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Total Sales</span>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">$2.48M+</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Stat Card 2 -->
+                                        <div class="col-sm-6 col-lg-12">
+                                            <div class="dashboard-stat-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 15px;">
+                                                <div class="stat-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(59, 249, 130, 0.1); border: 1px solid rgba(59, 249, 130, 0.2); display: flex; align-items: center; justify-content: center; color: #3BF982; font-size: 20px; transition: all 0.3s ease;">
+                                                    <i class="fa-solid fa-sack-dollar"></i>
+                                                </div>
+                                                <div>
+                                                    <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Net Profit</span>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">$840K+</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Stat Card 3 -->
+                                        <div class="col-sm-6 col-lg-12">
+                                            <div class="dashboard-stat-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 15px;">
+                                                <div class="stat-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(59, 249, 130, 0.1); border: 1px solid rgba(59, 249, 130, 0.2); display: flex; align-items: center; justify-content: center; color: #3BF982; font-size: 20px; transition: all 0.3s ease;">
+                                                    <i class="fa-solid fa-store"></i>
+                                                </div>
+                                                <div>
+                                                    <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Stores Managed</span>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">150+</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Stat Card 4 -->
+                                        <div class="col-sm-6 col-lg-12">
+                                            <div class="dashboard-stat-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 15px;">
+                                                <div class="stat-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(59, 249, 130, 0.1); border: 1px solid rgba(59, 249, 130, 0.2); display: flex; align-items: center; justify-content: center; color: #3BF982; font-size: 20px; transition: all 0.3s ease;">
+                                                    <i class="fa-solid fa-square-poll-vertical"></i>
+                                                </div>
+                                                <div>
+                                                    <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Success Rate</span>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #3BF982; margin: 2px 0 0 0;">98.5%</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right/Chart Side -->
+                                <div class="col-lg-8 mt-4 mt-lg-0">
+                                    <div class="chart-wrapper" style="position: relative;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 0 10px;">
+                                            <div>
+                                                <h4 style="color: #fff; font-size: 18px; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">Sales Chart From 2019</h4>
+                                                <p style="color: rgba(255, 255, 255, 0.5); font-size: 13px; margin: 2px 0 0 0;">Interactive sales & profit growth trend</p>
+                                            </div>
+                                            <div class="chart-legend" style="display: flex; gap: 15px; font-size: 12px;">
+                                                <span style="display: flex; align-items: center; gap: 5px; color: #fff;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #3BF982; display: inline-block;"></span> Sales</span>
+                                                <span style="display: flex; align-items: center; gap: 5px; color: #fff;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #00E396; display: inline-block;"></span> Profit</span>
+                                            </div>
+                                        </div>
+                                        <div id="salesChart" style="min-height: 350px;"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="row gx-4 gy-4 result-cards-container" style="margin-top: 50px;">
                             <!-- Card 1 -->
@@ -1284,70 +1410,6 @@
                 </div>
             </div>
 
-            <!-- Team Section Start -->
-            <section class="team-sectopn fix section-padding">
-                <div class="container">
-                    <div class="section-title text-center">
-                        <h6 class="wow fadeInUp">our team</h6>
-                        <h2 class="tp-char-animation">Our Special Team</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400"
-                                        alt="Michael Anderson"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">Michael Anderson</a></h3>
-                                    <p>Founder & CEO</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
-                                        alt="Sarah Jenkins"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">Sarah Jenkins</a></h3>
-                                    <p>Operations Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400"
-                                        alt="David Miller"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">David Miller</a></h3>
-                                    <p>PPC Strategist</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400"
-                                        alt="Emily Thompson"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">Emily Thompson</a></h3>
-                                    <p>E-commerce Consultant</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- News Section Start -->
             <section class="news-section fix section-padding section-bg">
                 <div class="container">
@@ -1370,7 +1432,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="news-box-items">
                                 <div class="thumb">
-                                    <img src="https://ex-coders.com/html/exolax/assets/img/news/01.jpg" alt="img">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop" alt="img" style="width: 100%; height: 260px; object-fit: cover;">
                                 </div>
                                 <div class="content">
                                     <ul class="cat-list">
@@ -1388,7 +1450,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="news-box-items">
                                 <div class="thumb">
-                                    <img src="https://ex-coders.com/html/exolax/assets/img/news/02.jpg" alt="img">
+                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=500&auto=format&fit=crop" alt="img" style="width: 100%; height: 260px; object-fit: cover;">
                                 </div>
                                 <div class="content">
                                     <ul class="cat-list">
@@ -1406,7 +1468,7 @@
                         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                             <div class="news-box-items">
                                 <div class="thumb">
-                                    <img src="https://ex-coders.com/html/exolax/assets/img/news/03.jpg" alt="img">
+                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=500&auto=format&fit=crop" alt="img" style="width: 100%; height: 260px; object-fit: cover;">
                                 </div>
                                 <div class="content">
                                     <ul class="cat-list">
@@ -1637,6 +1699,249 @@
                 }
             );
         })();
+
+        // Sales Chart Initialization
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!document.getElementById("salesChart")) return;
+
+
+            var chartContainer = document.getElementById("salesChart");
+            if (!chartContainer) return;
+
+            // Render the HTML structure of the custom chart
+            chartContainer.innerHTML = `
+<div class="custom-chart-container" style="width: 100%; height: 350px; position: relative; font-family: sans-serif; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; -webkit-user-select: none; user-select: none;">
+    <!-- Y-Axis labels and grid lines -->
+    <div class="chart-grid" style="position: absolute; top: 10px; left: 50px; right: 10px; bottom: 40px; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; z-index: 0;">
+        <div style="width: 100%; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); height: 0;"></div>
+        <div style="width: 100%; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); height: 0;"></div>
+        <div style="width: 100%; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); height: 0;"></div>
+        <div style="width: 100%; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); height: 0;"></div>
+        <div style="width: 100%; border-bottom: 1px dashed rgba(255, 255, 255, 0.08); height: 0;"></div>
+        <div style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.15); height: 0;"></div>
+    </div>
+    
+    <!-- Y-Axis text labels -->
+    <div class="chart-y-labels" style="position: absolute; top: 5px; left: 0; width: 40px; bottom: 40px; display: flex; flex-direction: column; justify-content: space-between; font-size: 11px; color: rgba(255, 255, 255, 0.4); text-align: right; pointer-events: none; z-index: 1;">
+        <span>$2.5M</span>
+        <span>$2.0M</span>
+        <span>$1.5M</span>
+        <span>$1.0M</span>
+        <span>$0.5M</span>
+        <span>$0</span>
+    </div>
+
+    <!-- Chart Bars and Lines wrapper -->
+    <div class="chart-plot-area" style="position: absolute; top: 10px; left: 50px; right: 10px; bottom: 40px; z-index: 2; display: flex; justify-content: space-around; align-items: flex-end;">
+        
+        <!-- Profit Line SVG Overlay -->
+        <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 5;">
+            <defs>
+                <linearGradient id="profit-line-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#00E396" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#00E396" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+            <path class="chart-profit-area-path" d="" fill="url(#profit-line-grad)" style="transition: opacity 1s ease-in-out; opacity: 0;"></path>
+            <path class="chart-profit-line-path" d="" fill="none" stroke="#00E396" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke-dashoffset 1.5s ease-in-out; stroke-dasharray: 1000; stroke-dashoffset: 1000;"></path>
+        </svg>
+
+        <!-- Bar Group 1 -->
+        <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
+            <div class="chart-bar" data-height="5" data-profit-height="5" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.1s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+                <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2019</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $120K</div>
+                    <div style="color: #00E396;">Profit: $42K</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Group 2 -->
+        <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
+            <div class="chart-bar" data-height="11.2" data-profit-height="11.3" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.2s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+                <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2020</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $280K</div>
+                    <div style="color: #00E396;">Profit: $95K</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Group 3 -->
+        <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
+            <div class="chart-bar" data-height="20.5" data-profit-height="21.4" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.3s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+                <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2021</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $510K</div>
+                    <div style="color: #00E396;">Profit: $180K</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Group 4 -->
+        <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
+            <div class="chart-bar" data-height="33.8" data-profit-height="34.5" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.4s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+                <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2022</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $840K</div>
+                    <div style="color: #00E396;">Profit: $290K</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Group 5 -->
+        <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
+            <div class="chart-bar" data-height="56.8" data-profit-height="58.3" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.5s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+                <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2023</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $1.42M</div>
+                    <div style="color: #00E396;">Profit: $490K</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Group 6 -->
+        <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
+            <div class="chart-bar" data-height="100" data-profit-height="100" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.6s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+                <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
+                    <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2024</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $2.48M</div>
+                    <div style="color: #00E396;">Profit: $840K</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- X-Axis text labels -->
+    <div class="chart-x-labels" style="position: absolute; left: 50px; right: 10px; bottom: 10px; height: 20px; display: flex; justify-content: space-around; align-items: center; font-size: 12px; font-weight: 700; color: rgba(255, 255, 255, 0.6); pointer-events: none; z-index: 1;">
+        <span style="width: 10%; text-align: center;">2019</span>
+        <span style="width: 10%; text-align: center;">2020</span>
+        <span style="width: 10%; text-align: center;">2021</span>
+        <span style="width: 10%; text-align: center;">2022</span>
+        <span style="width: 10%; text-align: center;">2023</span>
+        <span style="width: 10%; text-align: center;">2024</span>
+    </div>
+</div>
+`;
+
+            var bars = chartContainer.querySelectorAll('.chart-bar');
+            bars.forEach(function(bar) {
+                var tooltip = bar.querySelector('.chart-tooltip');
+                bar.addEventListener('mouseenter', function() {
+                    tooltip.style.opacity = '1';
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.transform = 'translateX(-50%) translateY(0px)';
+                    bar.style.filter = 'brightness(1.1)';
+                });
+                bar.addEventListener('mouseleave', function() {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.transform = 'translateX(-50%) translateY(10px)';
+                    bar.style.filter = 'none';
+                });
+            });
+
+            var triggerChartRender = function() {
+                // 1. Animate bars height
+                bars.forEach(function(bar) {
+                    var finalHeight = bar.getAttribute('data-height');
+                    bar.style.height = finalHeight + '%';
+                });
+
+                // 2. Animate Profit SVG line path
+                var svg = chartContainer.querySelector('svg');
+                var linePath = chartContainer.querySelector('.chart-profit-line-path');
+                var areaPath = chartContainer.querySelector('.chart-profit-area-path');
+                var plotArea = chartContainer.querySelector('.chart-plot-area');
+
+                var width = plotArea.clientWidth;
+                var height = plotArea.clientHeight;
+
+                var points = [];
+                var barGroups = chartContainer.querySelectorAll('.chart-bar-group');
+                
+                barGroups.forEach(function(group, index) {
+                    var profitPct = parseFloat(group.querySelector('.chart-bar').getAttribute('data-profit-height'));
+                    var x = (index + 0.5) * (width / 6);
+                    var y = height - (profitPct / 100 * height);
+                    points.push({ x: x, y: y });
+                });
+
+                var pathD = "";
+                var areaD = "M " + points[0].x + " " + height + " ";
+                
+                points.forEach(function(pt, index) {
+                    if (index === 0) {
+                        pathD += "M " + pt.x + " " + pt.y;
+                    } else {
+                        pathD += " L " + pt.x + " " + pt.y;
+                    }
+                    areaD += "L " + pt.x + " " + pt.y;
+                });
+                
+                areaD += " L " + points[points.length - 1].x + " " + height + " Z";
+
+                linePath.setAttribute('d', pathD);
+                areaPath.setAttribute('d', areaD);
+
+                var pathLength = linePath.getTotalLength();
+                linePath.style.strokeDasharray = pathLength;
+                linePath.style.strokeDashoffset = pathLength;
+                
+                // Force layout reflow
+                linePath.getBoundingClientRect();
+                
+                linePath.style.strokeDashoffset = '0';
+                areaPath.style.opacity = '1';
+            };
+
+            // Setup viewport observer/scroll trigger
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.create({
+                    trigger: chartContainer,
+                    start: "top 85%",
+                    onEnter: function() {
+                        triggerChartRender();
+                    },
+                    once: true
+                });
+                ScrollTrigger.refresh();
+            } else {
+                var hasTriggered = false;
+                var checkScroll = function() {
+                    if (hasTriggered) return;
+                    var rect = chartContainer.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        triggerChartRender();
+                        hasTriggered = true;
+                        window.removeEventListener('scroll', checkScroll);
+                    }
+                };
+                window.addEventListener('scroll', checkScroll);
+                setTimeout(checkScroll, 300);
+            }
+        });
+
+        // Lazy load the background video to prevent blocking page load
+        window.addEventListener('load', function() {
+            var video = document.getElementById('hero-bg-video');
+            if (video) {
+                var source1 = document.createElement('source');
+                source1.src = 'assets/business-colleagues-discussing-project-at-office-d-2025-12-17-06-38-09-utc.mov';
+                source1.type = 'video/quicktime';
+                video.appendChild(source1);
+                
+                var source2 = document.createElement('source');
+                source2.src = 'assets/business-colleagues-discussing-project-at-office-d-2025-12-17-06-38-09-utc.mov';
+                source2.type = 'video/mp4';
+                video.appendChild(source2);
+
+                video.load();
+                video.play();
+            }
+        });
     </script>
 </body>
 

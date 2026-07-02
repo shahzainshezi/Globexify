@@ -519,64 +519,9 @@
             }
         }
     </style>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body style="background-color: #0A0E0C;">
-
-    <!-- Preloader Start -->
-    <div id="preloader" class="preloader"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0A0E0C; display: flex; align-items: center; justify-content: center; z-index: 99999;">
-        <div class="loader-content" style="text-align: center;">
-            <h1
-                style="font-size: 6vw; font-weight: 900; color: #3BF982; letter-spacing: 15px; text-transform: uppercase; margin: 0; animation: loaderPulse 1.5s ease-in-out infinite;">
-                GLOBEXIFY</h1>
-            <div
-                style="width: 100%; height: 2px; background: rgba(59, 249, 130, 0.1); margin-top: 20px; position: relative; overflow: hidden;">
-                <div
-                    style="position: absolute; top: 0; left: 0; height: 100%; background: #3BF982; width: 0; animation: loaderBar 2s ease-in-out infinite;">
-                </div>
-            </div>
-            <p
-                style="color: #fff; text-transform: uppercase; letter-spacing: 5px; font-size: 12px; margin-top: 15px; opacity: 0.6;">
-                Initializing Systems</p>
-        </div>
-    </div>
-
-    <style>
-        @keyframes loaderPulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-                filter: blur(0px);
-            }
-
-            50% {
-                opacity: 0.7;
-                transform: scale(1.02);
-                filter: blur(2px);
-            }
-        }
-
-        @keyframes loaderBar {
-            0% {
-                width: 0;
-                left: 0;
-            }
-
-            50% {
-                width: 100%;
-                left: 0;
-            }
-
-            100% {
-                width: 0;
-                left: 100%;
-            }
-        }
-    </style>
 
 
 
@@ -946,22 +891,16 @@
                             </div>
                             <div class="counter-wrapper-3">
                                 <div class="row g-4">
-                                    <div class="col-sm-4 col-6 wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="col-sm-6 col-6 wow fadeInUp" data-wow-delay=".3s">
                                         <div class="counter-box-items">
                                             <h2><span class="count">100</span>+</h2>
                                             <p>Stores Scaled</p>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4 col-6 wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="col-sm-6 col-6 wow fadeInUp" data-wow-delay=".5s">
                                         <div class="counter-box-items">
                                             <h2><span class="count">99</span>%</h2>
                                             <p>Success Rate</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 col-12 wow fadeInUp" data-wow-delay=".7s">
-                                        <div class="counter-box-items">
-                                            <h2><span class="count">80</span>k</h2>
-                                            <p>Avg. Monthly Sales</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1009,63 +948,61 @@
                 </div>
             </div>
 
-            <!-- Team Section Start -->
-            <section class="team-sectopn fix section-padding">
+            <!-- Founder Section Start -->
+            <section class="founder-section fix section-padding" style="background-color: #0A0E0C; position: relative;">
                 <div class="container">
-                    <div class="section-title text-center">
-                        <h6 class="wow fadeInUp">our team</h6>
-                        <h2 class="tp-char-animation">Our Special Team</h2>
+                    <div class="section-title text-center" style="margin-bottom: 70px;">
+                        <span style="background: rgba(59, 249, 130, 0.08); color: #3BF982; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid rgba(59, 249, 130, 0.15); display: inline-block; margin-bottom: 20px;">meet our leadership</span>
+                        <h2 class="tp-char-animation text-white">The Founders</h2>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400"
-                                        alt="Michael Anderson"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">Michael Anderson</a></h3>
-                                    <p>Founder & CEO</p>
+                    
+                    <!-- Founder 1: Image Left, Text Right -->
+                    <div class="row align-items-center" style="margin-bottom: 100px;">
+                        <div class="col-lg-5 wow img-custom-anim-left" data-wow-delay=".2s">
+                            <div class="founder-image-wrap" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid rgba(59, 249, 130, 0.2); box-shadow: 0 20px 40px rgba(59, 249, 130, 0.15);">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Zain Khan" style="width: 100%; height: 500px; object-fit: cover; filter: grayscale(20%); transition: all 0.5s ease;">
+                                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 14, 12, 0.95), transparent); padding: 30px; text-align: left;">
+                                    <h3 style="color: #fff; margin: 0; font-size: 26px; font-weight: 800;">Zain Khan</h3>
+                                    <p style="color: #3BF982; margin: 5px 0 0 0; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Founder & CEO</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400"
-                                        alt="Sarah Jenkins"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">Sarah Jenkins</a></h3>
-                                    <p>Operations Lead</p>
-                                </div>
+                        <div class="col-lg-7 mt-5 mt-lg-0 wow fadeInUp" data-wow-delay=".4s" style="padding-left: 50px;">
+                            <div class="founder-info-wrap">
+                                <h3 style="color: #fff; font-size: 32px; font-weight: 800; margin-bottom: 20px; line-height: 1.2;">
+                                    Driving the Vision of <br><span style="color: #3BF982;">E-commerce Automation</span>
+                                </h3>
+                                <p style="color: rgba(255, 255, 255, 0.7); font-size: 16px; line-height: 1.8; margin-bottom: 25px;">
+                                    Zain started Globexify Tech with a simple mission: to empower sellers globally by removing the friction from marketplace automation. With over 8 years of experience in Amazon FBA operations, Walmart syndication, and digital systems architecture, he has scaled over 150 stores to millions in combined annual revenue.
+                                </p>
+                                <blockquote style="border-left: 3px solid #3BF982; padding-left: 20px; margin-left: 0; font-style: italic; color: rgba(59, 249, 130, 0.9); font-size: 17px; line-height: 1.6; font-weight: 600;">
+                                    "Our goal is not just to manage stores, but to build automated digital assets that generate sustainable passive income for our clients."
+                                </blockquote>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400"
-                                        alt="David Miller"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">David Miller</a></h3>
-                                    <p>PPC Strategist</p>
-                                </div>
+                    </div>
+
+                    <!-- Founder 2: Text Left, Image Right -->
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 order-2 order-lg-1 wow fadeInUp" data-wow-delay=".4s" style="padding-right: 50px;">
+                            <div class="founder-info-wrap">
+                                <h3 style="color: #fff; font-size: 32px; font-weight: 800; margin-bottom: 20px; line-height: 1.2;">
+                                    Architecting the Technology of <br><span style="color: #3BF982;">Store Scaling</span>
+                                </h3>
+                                <p style="color: rgba(255, 255, 255, 0.7); font-size: 16px; line-height: 1.8; margin-bottom: 25px;">
+                                    Hamza is the technical force behind our automated PPC workflows, custom scraper tooling, and analytics dashboards. He leads our operations and automation teams to ensure that price adjustments, inventory tracking, and sales analytics happen in real-time with zero downtime.
+                                </p>
+                                <blockquote style="border-left: 3px solid #3BF982; padding-left: 20px; margin-left: 0; font-style: italic; color: rgba(59, 249, 130, 0.9); font-size: 17px; line-height: 1.6; font-weight: 600;">
+                                    "We build smart systems that analyze search-term reports and inventory trends so our stores are always optimized for maximum profit margins."
+                                </blockquote>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                            <div class="team-card-items">
-                                <div class="thumb">
-                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400"
-                                        alt="Emily Thompson"
-                                        style="width: 100%; height: 450px; object-fit: cover; object-position: top center; border-radius: 15px;">
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">Emily Thompson</a></h3>
-                                    <p>E-commerce Consultant</p>
+                        <div class="col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0 wow img-custom-anim-right" data-wow-delay=".2s">
+                            <div class="founder-image-wrap" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid rgba(59, 249, 130, 0.2); box-shadow: 0 20px 40px rgba(59, 249, 130, 0.15);">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop" alt="Hamza Malik" style="width: 100%; height: 500px; object-fit: cover; filter: grayscale(20%); transition: all 0.5s ease;">
+                                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10, 14, 12, 0.95), transparent); padding: 30px; text-align: left;">
+                                    <h3 style="color: #fff; margin: 0; font-size: 26px; font-weight: 800;">Hamza Malik</h3>
+                                    <p style="color: #3BF982; margin: 5px 0 0 0; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Co-Founder & CTO</p>
                                 </div>
                             </div>
                         </div>
@@ -1160,7 +1097,7 @@
     <!--<< Gsap Scroll Split Text Js >>-->
     <script src="assets/js/gsap-split-text.js"></script>
     <!--<< Choma Min Js >>-->
-    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/chroma.min.js"></script>
     <!--<< Nice Select Js >>-->
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <!--<< Waypoints Js >>-->
