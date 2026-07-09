@@ -181,6 +181,29 @@
             color: white !important;
         }
 
+        .header-main .main-menu ul li .submenu {
+            background-color: #0f1612 !important;
+            border: 1px solid rgba(59, 249, 130, 0.15) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+            min-width: 260px !important;
+        }
+
+        .header-main .main-menu ul li .submenu li a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            padding: 6px 16px !important;
+            white-space: nowrap !important;
+        }
+
+        .header-main .main-menu ul li .submenu li a:hover {
+            color: #3BF982 !important;
+            background-color: rgba(59, 249, 130, 0.05) !important;
+        }
+
+        .header-main .main-menu ul li .submenu li:last-child a {
+            border-bottom: none !important;
+        }
+
         .theme-btn:hover {
             color: #000 !important;
         }
@@ -587,8 +610,17 @@
                                     <li>
                                         <a href="about.html">About Us</a>
                                     </li>
-                                    <li>
-                                        <a href="#services">Services</a>
+                                    <li class="has-dropdown">
+                                        <a href="index.html#services">
+                                            Services
+                                            <i class="fa-regular fa-angle-down"></i>
+                                        </a>
+                                        <ul class="submenu">
+                                            <li><a href="service-details.html">Amazon Wholesale FBA</a></li>
+                                            <li><a href="#">Shopify Automation</a></li>
+                                            <li><a href="#">Walmart Automation</a></li>
+                                            <li><a href="#">E-commerce Consultancy</a></li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="#case-study">Success Stories</a>
@@ -710,6 +742,16 @@
                                         <img src="assets/img/brand/client-brand-04.png" alt="Client Logo 4">
                                     </div>
                                 </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/shopify.png" alt="Shopify Logo">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/amazon-logo.png" alt="Amazon Logo">
+                                    </div>
+                                </div>
                                 <!-- Group 2 for seamless loop -->
                                 <div class="swiper-slide">
                                     <div class="brand-image">
@@ -731,6 +773,16 @@
                                         <img src="assets/img/brand/client-brand-04.png" alt="Client Logo 4">
                                     </div>
                                 </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/shopify.png" alt="Shopify Logo">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/amazon-logo.png" alt="Amazon Logo">
+                                    </div>
+                                </div>
                                 <!-- Group 3 for seamless loop -->
                                 <div class="swiper-slide">
                                     <div class="brand-image">
@@ -750,6 +802,16 @@
                                 <div class="swiper-slide">
                                     <div class="brand-image">
                                         <img src="assets/img/brand/client-brand-04.png" alt="Client Logo 4">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/shopify.png" alt="Shopify Logo">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand-image">
+                                        <img src="assets/img/brand/amazon-logo.png" alt="Amazon Logo">
                                     </div>
                                 </div>
                             </div>
@@ -1046,7 +1108,7 @@
                                                 </div>
                                                 <div>
                                                     <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Total Sales</span>
-                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">$2.48M+</h4>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">$200K+</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1058,7 +1120,7 @@
                                                 </div>
                                                 <div>
                                                     <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Net Profit</span>
-                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">$840K+</h4>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #fff; margin: 2px 0 0 0;">$60K+</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1082,7 +1144,7 @@
                                                 </div>
                                                 <div>
                                                     <span style="font-size: 13px; color: rgba(255, 255, 255, 0.6); display: block; text-transform: uppercase; letter-spacing: 0.5px;">Success Rate</span>
-                                                    <h4 style="font-size: 24px; font-weight: 800; color: #3BF982; margin: 2px 0 0 0;">98.5%</h4>
+                                                    <h4 style="font-size: 24px; font-weight: 800; color: #3BF982; margin: 2px 0 0 0;">95.34%</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1221,10 +1283,10 @@
                                         <div class="swiper-slide">
                                             <div class="testimonial-box-items">
                                                 <div class="client-info">
-                                                    <img src="assets/img/testimonial/client.png" alt="img">
+                                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=120&auto=format&fit=crop" alt="img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                                     <div class="client-content">
-                                                        <h5>Daniel Smith</h5>
-                                                        <p>Senior engineer</p>
+                                                        <h5>Sarah Jenkins</h5>
+                                                        <p>E-commerce Founder</p>
                                                     </div>
                                                 </div>
                                                 <div class="testi-content">
@@ -1247,10 +1309,7 @@
                                                         </svg>
                                                     </div>
                                                     <span>
-                                                        This digital agency completely transformed our online presence.
-                                                        Their expertise, creativity, and attention to detail exceeded
-                                                        all our expectations. We highly recommend their outstanding
-                                                        services!
+                                                        This agency completely transformed our online presence. Their automated PPC strategies and listing optimization helped us scale our Amazon store past $500K in sales within 6 months!
                                                     </span>
                                                 </div>
                                             </div>
@@ -1258,10 +1317,10 @@
                                         <div class="swiper-slide">
                                             <div class="testimonial-box-items">
                                                 <div class="client-info">
-                                                    <img src="assets/img/testimonial/client.png" alt="img">
+                                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=120&auto=format&fit=crop" alt="img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                                     <div class="client-content">
-                                                        <h5>Daniel Smith</h5>
-                                                        <p>Senior engineer</p>
+                                                        <h5>David Miller</h5>
+                                                        <p>Shopify Brand Owner</p>
                                                     </div>
                                                 </div>
                                                 <div class="testi-content">
@@ -1284,10 +1343,7 @@
                                                         </svg>
                                                     </div>
                                                     <span>
-                                                        This digital agency completely transformed our online presence.
-                                                        Their expertise, creativity, and attention to detail exceeded
-                                                        all our expectations. We highly recommend their outstanding
-                                                        services!
+                                                        The transition from manual management to automation was seamless. Our eBay and Walmart storefronts are now fully managed, generating consistent passive income month after month.
                                                     </span>
                                                 </div>
                                             </div>
@@ -1295,10 +1351,10 @@
                                         <div class="swiper-slide">
                                             <div class="testimonial-box-items">
                                                 <div class="client-info">
-                                                    <img src="assets/img/testimonial/client.png" alt="img">
+                                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop" alt="img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                                     <div class="client-content">
-                                                        <h5>Daniel Smith</h5>
-                                                        <p>Senior engineer</p>
+                                                        <h5>Elena Rostova</h5>
+                                                        <p>TikTok Shop Creator</p>
                                                     </div>
                                                 </div>
                                                 <div class="testi-content">
@@ -1321,10 +1377,7 @@
                                                         </svg>
                                                     </div>
                                                     <span>
-                                                        This digital agency completely transformed our online presence.
-                                                        Their expertise, creativity, and attention to detail exceeded
-                                                        all our expectations. We highly recommend their outstanding
-                                                        services!
+                                                        Globexify Tech's TikTok Shop and Etsy automation strategies were a game-changer. They scaled our creator affiliate marketing campaigns and drove viral storefront growth!
                                                     </span>
                                                 </div>
                                             </div>
@@ -1332,10 +1385,10 @@
                                         <div class="swiper-slide">
                                             <div class="testimonial-box-items">
                                                 <div class="client-info">
-                                                    <img src="assets/img/testimonial/client.png" alt="img">
+                                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=120&auto=format&fit=crop" alt="img" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                                     <div class="client-content">
-                                                        <h5>Daniel Smith</h5>
-                                                        <p>Senior engineer</p>
+                                                        <h5>Marcus Thompson</h5>
+                                                        <p>Amazon FBA Seller</p>
                                                     </div>
                                                 </div>
                                                 <div class="testi-content">
@@ -1358,10 +1411,7 @@
                                                         </svg>
                                                     </div>
                                                     <span>
-                                                        This digital agency completely transformed our online presence.
-                                                        Their expertise, creativity, and attention to detail exceeded
-                                                        all our expectations. We highly recommend their outstanding
-                                                        services!
+                                                        Their team handled product hunting and store management with extreme professionalism. Net profits increased by 40% and our customer feedback ratings skyrocketed!
                                                     </span>
                                                 </div>
                                             </div>
@@ -1723,11 +1773,11 @@
     
     <!-- Y-Axis text labels -->
     <div class="chart-y-labels" style="position: absolute; top: 5px; left: 0; width: 40px; bottom: 40px; display: flex; flex-direction: column; justify-content: space-between; font-size: 11px; color: rgba(255, 255, 255, 0.4); text-align: right; pointer-events: none; z-index: 1;">
-        <span>$2.5M</span>
-        <span>$2.0M</span>
-        <span>$1.5M</span>
-        <span>$1.0M</span>
-        <span>$0.5M</span>
+        <span>$200K</span>
+        <span>$160K</span>
+        <span>$120K</span>
+        <span>$80K</span>
+        <span>$40K</span>
         <span>$0</span>
     </div>
 
@@ -1751,52 +1801,52 @@
             <div class="chart-bar" data-height="5" data-profit-height="5" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.1s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
                 <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
                     <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2019</div>
-                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $120K</div>
-                    <div style="color: #00E396;">Profit: $42K</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $10K</div>
+                    <div style="color: #00E396;">Profit: $3K</div>
                 </div>
             </div>
         </div>
 
         <!-- Bar Group 2 -->
         <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
-            <div class="chart-bar" data-height="11.2" data-profit-height="11.3" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.2s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+            <div class="chart-bar" data-height="11.2" data-profit-height="11.7" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.2s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
                 <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
                     <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2020</div>
-                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $280K</div>
-                    <div style="color: #00E396;">Profit: $95K</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $22K</div>
+                    <div style="color: #00E396;">Profit: $7K</div>
                 </div>
             </div>
         </div>
 
         <!-- Bar Group 3 -->
         <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
-            <div class="chart-bar" data-height="20.5" data-profit-height="21.4" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.3s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+            <div class="chart-bar" data-height="20.5" data-profit-height="21.7" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.3s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
                 <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
                     <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2021</div>
-                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $510K</div>
-                    <div style="color: #00E396;">Profit: $180K</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $41K</div>
+                    <div style="color: #00E396;">Profit: $13K</div>
                 </div>
             </div>
         </div>
 
         <!-- Bar Group 4 -->
         <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
-            <div class="chart-bar" data-height="33.8" data-profit-height="34.5" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.4s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+            <div class="chart-bar" data-height="33.8" data-profit-height="33.3" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.4s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
                 <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
                     <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2022</div>
-                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $840K</div>
-                    <div style="color: #00E396;">Profit: $290K</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $68K</div>
+                    <div style="color: #00E396;">Profit: $20K</div>
                 </div>
             </div>
         </div>
 
         <!-- Bar Group 5 -->
         <div class="chart-bar-group" style="width: 10%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative;">
-            <div class="chart-bar" data-height="56.8" data-profit-height="58.3" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.5s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
+            <div class="chart-bar" data-height="57.5" data-profit-height="58.3" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.5s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
                 <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
                     <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2023</div>
-                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $1.42M</div>
-                    <div style="color: #00E396;">Profit: $490K</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $115K</div>
+                    <div style="color: #00E396;">Profit: $35K</div>
                 </div>
             </div>
         </div>
@@ -1806,8 +1856,8 @@
             <div class="chart-bar" data-height="100" data-profit-height="100" style="width: 100%; height: 0; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #3BF982, rgba(59, 249, 130, 0.2)); position: relative; transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.6s; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 249, 130, 0.15);">
                 <div class="chart-tooltip" style="position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%) translateY(10px); background: #0F1612; border: 1px solid rgba(59, 249, 130, 0.3); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; white-space: nowrap; opacity: 0; visibility: hidden; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 5px 15px rgba(0,0,0,0.5);">
                     <div style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: normal; margin-bottom: 2px;">Year 2024</div>
-                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $2.48M</div>
-                    <div style="color: #00E396;">Profit: $840K</div>
+                    <div style="color: #3BF982; margin-bottom: 2px;">Sales: $200K</div>
+                    <div style="color: #00E396;">Profit: $60K</div>
                 </div>
             </div>
         </div>

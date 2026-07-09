@@ -7,9 +7,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Gramentheme">
-        <meta name="description" content="GlobexifyTech - Tech Agency">
+        <meta name="description" content="GlobexifyTech - Amazon Wholesale FBA Store Management">
         <!-- ======== Page title ============ -->
-        <title>GlobexifyTech - Tech Agency</title>
+        <title>Amazon Wholesale FBA Store Management - GlobexifyTech</title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
         <!--<< Bootstrap min.css >>-->
@@ -32,53 +32,248 @@
         <link rel="stylesheet" href="assets/css/color.css">
         <!--<< Main.css >>-->
         <link rel="stylesheet" href="assets/css/main.css">
+        <style>
+            .breadcrumb-wrapper {
+                position: relative;
+                background-size: cover !important;
+                background-position: center !important;
+                padding: 150px 0 100px 0 !important;
+            }
+            .breadcrumb-wrapper::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                background: linear-gradient(180deg, rgba(10, 14, 12, 0.4) 0%, rgba(10, 14, 12, 0.95) 100%) !important;
+                z-index: 1 !important;
+            }
+            .breadcrumb-wrapper .container {
+                position: relative !important;
+                z-index: 2 !important;
+            }
+            .sticky {
+                background: rgba(10, 14, 12, 0.6) !important;
+                backdrop-filter: blur(15px) !important;
+                -webkit-backdrop-filter: blur(15px) !important;
+                border-bottom: 1px solid rgba(59, 249, 130, 0.1) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+                transition: all 0.3s ease-in-out !important;
+            }
+            #header-sticky.sticky .header-logo h2, 
+            #header-sticky.sticky .header-logo h2 span,
+            .sticky .header-logo h2,
+            .sticky .header-logo h2 span {
+                color: #3BF982 !important;
+            }
+            #header-sticky.sticky .header-logo h2 span,
+            .sticky .header-logo h2 span {
+                color: #ffffff !important;
+            }
+            .sticky.header-1 .logo, .sticky .logo {
+                filter: none !important;
+            }
+            .service-details-section, .section-padding {
+                padding-top: 100px !important;
+                padding-bottom: 100px !important;
+            }
+            .landing-section {
+                padding-top: 100px !important;
+                padding-bottom: 100px !important;
+                background-color: #0A0E0C !important;
+            }
+            .mb-5 {
+                margin-bottom: 50px !important;
+            }
+            .mt-5 {
+                margin-top: 50px !important;
+            }
+            body, section, .section-padding, .bg-white, .bg-bg, .section-bg {
+                background-color: #0A0E0C !important;
+            }
+            .header-main .main-menu ul li .submenu {
+                background-color: #0f1612 !important;
+                border: 1px solid rgba(59, 249, 130, 0.15) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+                min-width: 260px !important;
+            }
+            .header-main .main-menu ul li .submenu li a {
+                color: rgba(255, 255, 255, 0.8) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                padding: 6px 16px !important;
+                white-space: nowrap !important;
+            }
+            .header-main .main-menu ul li .submenu li a:hover {
+                color: #3BF982 !important;
+                background-color: rgba(59, 249, 130, 0.05) !important;
+            }
+            .header-main .main-menu ul li .submenu li:last-child a {
+                border-bottom: none !important;
+            }
+            .cta-section::before {
+                background-color: #0A0E0C !important;
+            }
+            .service-widget-categories ul li a {
+                color: rgba(255, 255, 255, 0.7) !important;
+            }
+            .service-widget-categories ul li.active a,
+            .service-widget-categories ul li a:hover {
+                color: #3BF982 !important;
+            }
+            .service-widget-categories ul li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            }
+            .service-widget-categories ul li span i {
+                color: #3BF982 !important;
+            }
+            .single-sidebar-widget {
+                background: #0f1612 !important;
+                border: 1px solid rgba(59, 249, 130, 0.1) !important;
+                border-radius: 16px !important;
+                padding: 30px 25px !important;
+            }
+            .single-sidebar-widget .wid-title h4 {
+                color: #fff !important;
+            }
+            .service-details-content h3 {
+                color: #fff !important;
+                font-weight: 800;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+            .service-details-content p {
+                color: rgba(255, 255, 255, 0.7) !important;
+                line-height: 1.8;
+            }
+            .feature-card {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 16px;
+                padding: 24px;
+                transition: all 0.3s ease;
+                height: 100%;
+            }
+            .feature-card:hover {
+                border-color: rgba(59, 249, 130, 0.3);
+                background: rgba(59, 249, 130, 0.02);
+                transform: translateY(-5px);
+            }
+            .feature-card i {
+                color: #3BF982;
+                font-size: 24px;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+            .feature-card h5 {
+                color: #fff;
+                font-weight: 700;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .feature-card p {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+            .roadmap-container {
+                position: relative;
+                margin-top: 40px;
+                padding-left: 30px;
+                border-left: 2px dashed rgba(59, 249, 130, 0.2);
+            }
+            .roadmap-step {
+                position: relative;
+                margin-bottom: 35px;
+            }
+            .roadmap-step::before {
+                content: '';
+                position: absolute;
+                left: -41px;
+                top: 5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #0A0E0C;
+                border: 4px solid #3BF982;
+                z-index: 2;
+            }
+            .roadmap-step-num {
+                font-size: 12px;
+                font-weight: 800;
+                color: #3BF982;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 5px;
+            }
+            .roadmap-step-title {
+                color: #fff;
+                font-weight: 700;
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .roadmap-step-desc {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.6) !important;
+                margin-bottom: 0;
+            }
+            .package-card {
+                background: rgba(59, 249, 130, 0.02);
+                border: 1px solid rgba(59, 249, 130, 0.1);
+                border-radius: 20px;
+                padding: 30px;
+                height: 100%;
+            }
+            .package-card h4 {
+                color: #fff;
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .package-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .package-list li {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 14px;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .package-list li i {
+                color: #3BF982;
+                font-size: 16px;
+            }
+            .accordion-item {
+                background: rgba(255, 255, 255, 0.02) !important;
+                border: 1px solid rgba(255, 255, 255, 0.05) !important;
+                border-radius: 12px !important;
+                overflow: hidden;
+            }
+            .accordion-button {
+                background: transparent !important;
+                color: #fff !important;
+                font-weight: 700 !important;
+                box-shadow: none !important;
+                padding: 20px !important;
+            }
+            .accordion-button:not(.collapsed) {
+                color: #3BF982 !important;
+                background: rgba(59, 249, 130, 0.05) !important;
+            }
+            .accordion-body {
+                background: transparent !important;
+                color: rgba(255, 255, 255, 0.7) !important;
+                padding: 20px !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+            }
+        </style>
     </head>
     <body >
-
-         <!-- Preloader Start -->
-         <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-                <div class="spinner">                
-                </div>
-                <div class="txt-loading">
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                    <span data-text-preloader="X" class="letters-loading">
-                        X
-                    </span>
-                    <span data-text-preloader="O" class="letters-loading">
-                        O
-                    </span>
-                    <span data-text-preloader="L" class="letters-loading">
-                        L
-                    </span>
-                    <span data-text-preloader="A" class="letters-loading">
-                        A
-                    </span>
-                    <span data-text-preloader="X" class="letters-loading">
-                        X
-                    </span>
-                </div>
-                <p class="text-center">Loading</p>
-            </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Back To Top Start -->
         <button id="back-top" class="back-to-top">
@@ -97,18 +292,18 @@
                         <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/black-logo.svg" alt="logo-img">
+                                    <h2 style="color: #3BF982; font-weight: 900; margin: 0; text-transform: uppercase; font-size: 28px;">Globexify <span style="color: #0A0E0C;">Tech</span></h2>
                                 </a>
                             </div>
                             <div class="offcanvas__close">
                                 <button>
-                                <i class="fas fa-times"></i>
+                                    <i class="fas fa-times"></i>
                                 </button>
                             </div>
                         </div>
                         <h3 class="offcanvas-title">About Us</h3>
                         <p>
-                            The argument in favor of using filler text goes something like this: If you use arey real content in the Consulting Process anytime you reachtent
+                            We help you maximize your potential and grow exponentially in the world of e-commerce. Our e-commerce experts help you navigate the online marketplace.
                         </p>
                         <div class="social-icon d-flex align-items-center">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -124,20 +319,19 @@
                                     <span>
                                         Address:
                                     </span>
-                                    7300-7398 Colonial Rd,
-                                    Brooklyn, NY 11209
+                                    Richmond, TX 77406-9238, USA.
                                 </li>
                                 <li>
                                     <span>
                                         Call Us:
                                     </span>
-                                    <a href="tel:+00012345688">+000 123 456 88</a>
+                                    <a href="tel:+16615606656">+1 (661) 560-6656</a>
                                 </li>
                                 <li>
                                     <span>
                                         Email:
                                     </span>
-                                    <a href="mailto:info@example.com">info@example.com</a>
+                                    <a href="mailto:info@globexifytech.com">info@globexifytech.com</a>
                                 </li>
                             </ul>
                         </div>
@@ -154,171 +348,36 @@
                     <div class="header-main">
                         <div class="logo">
                             <a href="index.html" class="header-logo">
-                                <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                                <h2 style="color: #3BF982; font-weight: 900; margin: 0; text-transform: uppercase; font-size: 34px;">Globexify <span style="color: #fff;">Tech</span></h2>
                             </a>
                         </div>
                         <div class="mean__menu-wrapper">
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li class="has-dropdown active menu-thumb">
-                                                <a href="index.html">
-                                                    Home 
-                                                </a>
-                                                <div class="submenu has-homemenu">
-                                                    <div class="row homemenu-items">
-                                                        <div class="col-xl-4 homemenu">
-                                                            <div class="homemenu-thumb">
-                                                                <img src="assets/img/header/home-1.jpg" alt="img">
-                                                                <div class="demo-button">
-                                                                    <a href="index.html" class="theme-btn">
-                                                                       Light Version
-                                                                    </a>
-                                                                    <a href="index-dark.html" class="theme-btn">
-                                                                        Dark Version
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu-content text-center">
-                                                                <h4 class="homemenu-title">
-                                                                    Web Design Agency
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-4 homemenu">
-                                                            <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/header/home-2.jpg" alt="img">
-                                                                <div class="demo-button">
-                                                                    <a href="index-2.html" class="theme-btn">
-                                                                       Light Version
-                                                                    </a>
-                                                                    <a href="index-2-dark.html" class="theme-btn">
-                                                                        Dark Version
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu-content text-center">
-                                                                <h4 class="homemenu-title">
-                                                                    Marketing Agency
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-4 homemenu">
-                                                            <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/header/home-3.jpg" alt="img">
-                                                                <div class="demo-button">
-                                                                    <a href="index-3.html" class="theme-btn">
-                                                                       Light Version
-                                                                    </a>
-                                                                    <a href="index-3-dark.html" class="theme-btn">
-                                                                        Dark Version
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu-content text-center">
-                                                                <h4 class="homemenu-title">
-                                                                    AI Startup
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-4 homemenu">
-                                                            <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/header/home-4.jpg" alt="img">
-                                                                <div class="demo-button">
-                                                                    <a href="index-4.html" class="theme-btn">
-                                                                       Light Version
-                                                                    </a>
-                                                                    <a href="index-4-dark.html" class="theme-btn">
-                                                                        Dark Version
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu-content text-center">
-                                                                <h4 class="homemenu-title">
-                                                                    Personal Portfolio
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-4 homemenu">
-                                                            <div class="homemenu-thumb mb-15">
-                                                                <img src="assets/img/header/home-5.jpg" alt="img">
-                                                                <div class="demo-button">
-                                                                    <a href="index-5.html" class="theme-btn">
-                                                                       Light Version
-                                                                    </a>
-                                                                    <a href="index-5-dark.html" class="theme-btn">
-                                                                        Dark Version
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu-content text-center">
-                                                                <h4 class="homemenu-title">
-                                                                    Marketing Agency
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="has-dropdown active d-xl-none">
-                                                <a href="index.html" class="border-none">
-                                                Home
-                                                </a>
-                                                <ul class="submenu">
-                                                    <li><a href="index.html">Web Design Agency (Light)</a></li>
-                                                    <li><a href="index-2.html">Marketing Agency (Light)</a></li>
-                                                    <li><a href="index-3.html"> AI Startup (Light)</a></li>
-                                                    <li><a href="index-dark.html">Web Design Agency (Dark)</a></li>
-                                                    <li><a href="index-2-dark.html">Marketing Agency (Dark)</a></li>
-                                                    <li><a href="index-3-dark.html"> AI Startup (Dark)</a></li>
-                                                    <li><a href="index-4.html"> Personal Portfolio (Light)</a></li>
-                                                    <li><a href="index-4-dark.html"> Personal Portfolio (Dark)</a></li>
-                                                    <li><a href="index-5.html"> Marketing Agency (Light)</a></li>
-                                                    <li><a href="index-5-dark.html"> Marketing Agency (Dark)</a></li>
-                                                </ul>
-                                            </li>
                                         <li>
-                                            <a href="about.html">
-                                               About Us
-                                            </a>
+                                            <a href="index.html">Home</a>
                                         </li>
                                         <li>
-                                            <a href="service-details.html">
-                                                Services
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="service.html">Service</a></li>
-                                                <li><a href="service-details.html">Service Details</a></li>
-                                            </ul>
+                                            <a href="about.html">About Us</a>
                                         </li>
                                         <li class="has-dropdown">
-                                            <a href="news-details.html">
-                                                Pages
-                                            </a>
-                                           <ul class="submenu">
-                                                <li><a href="project.html">Portfolio</a></li>
-                                                <li><a href="project-details.html">Portfolio Details</a></li>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="pricing.html">Pricing Plan</a></li>
-                                                <li><a href="faq.html">Faqs</a></li>
-                                                <li><a href="404.html">404 Error</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="news-details.html">
-                                                Blog
+                                            <a href="index.html#services">
+                                                Services
+                                                <i class="fa-regular fa-angle-down"></i>
                                             </a>
                                             <ul class="submenu">
-                                                <li><a href="news-grid.html">Blog Grid</a></li>
-                                                <li><a href="news.html">Blog Standard</a></li>
-                                                <li><a href="news-details.html">Blog Details</a></li>
+                                                <li><a href="service-details.html">Amazon Wholesale FBA</a></li>
+                                                <li><a href="#">Shopify Automation</a></li>
+                                                <li><a href="#">Walmart Automation</a></li>
+                                                <li><a href="#">E-commerce Consultancy</a></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="contact.html">
-                                                Contact
-                                            </a>
+                                            <a href="index.html#case-study">Success Stories</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact Us</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -326,7 +385,7 @@
                         </div>
                         <div class="header-right d-flex justify-content-end align-items-center">
                             <div class="header-button">
-                                <a href="about.html" class="theme-btn border-white">
+                                <a href="contact.html" class="theme-btn border-white">
                                     <span class="icon-1">
                                         <img src="assets/img/icon/10.svg" alt="img">
                                     </span>
@@ -354,11 +413,11 @@
         <div id="smooth-wrapper">
             <div id="smooth-content">
                 <!-- Breadcrumb-wrapper Start -->
-                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+                <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/case-study/our-team-bg.png');">
                     <div class="container">
                         <div class="page-heading">
                             <div class="breadcrumb-sub-title">
-                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Service Details</h1>
+                                <h1 class="wow fadeInUp" data-wow-delay=".3s">Amazon Wholesale FBA</h1>
                             </div>
                             <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                                 <li>
@@ -371,130 +430,387 @@
                                     <i class="fa-solid fa-slash-forward"></i>
                                 </li>
                                 <li>
-                                    Service Details
+                                    Amazon Wholesale FBA
                                 </li>
                             </ul>
+                            <p class="wow fadeInUp" data-wow-delay=".6s" style="color: rgba(255, 255, 255, 0.8); font-size: 18px; max-width: 700px; margin: 25px auto 0 auto; line-height: 1.6;">
+                                Done-For-You Amazon Wholesale store management. We source top brands, manage logistics, prep inventory, and scale your sales to $10,000+ monthly revenue.
+                            </p>
+                            <div class="wow fadeInUp" data-wow-delay=".7s" style="margin-top: 35px;">
+                                <a href="contact.html" class="theme-btn border-white">
+                                    <span class="icon-1">
+                                        <img src="assets/img/icon/10.svg" alt="img">
+                                    </span>
+                                    Get Started Today
+                                    <span class="icon-2">
+                                        <img src="assets/img/icon/11.svg" alt="img">
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
         
-                <!-- Service Details Section Start -->
-                <section class="service-details-section section-padding">
+                <!-- Intro Section Start -->
+                <section class="intro-section landing-section" style="padding-top: 100px !important;">
                     <div class="container">
-                        <div class="service-details-wrapper">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="details-image">
-                                        <img src="assets/img/service/details-1.jpg" alt="img">
+                        <div class="row align-items-stretch g-5">
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="service-details-content" style="padding-top: 0;">
+                                    <h6 style="color: #3BF982; text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 15px;">WHY CHOOSE US?</h6>
+                                    <h2 style="color: #fff; font-size: 40px; font-weight: 800; line-height: 1.2; margin-bottom: 25px;">Amazon Wholesale FBA - Done For You</h2>
+                                    <p class="mb-4" style="font-size: 16px; line-height: 1.8; color: rgba(255, 255, 255, 0.75);">
+                                        We help you maximize your potential and grow exponentially in the world of e-commerce. Our Amazon wholesale experts help you navigate the online marketplace, making it a platform for growth and increased revenue. Our services for Amazon are designed to streamline your sales process, optimize your product offerings, and give you a competitive edge. With low investment costs and limitless potential, Amazon FBA is a smart business move. Let us help you make the most of it.
+                                    </p>
+                                    <p class="mb-4" style="font-size: 16px; line-height: 1.8; color: rgba(255, 255, 255, 0.75);">
+                                        By utilizing our complete store management services, you outsource all operations, including product sourcing, brand approvals, inventory planning, shipping logistics, and listing optimization. We ensure your seller account remains in healthy standing while generating consistent, passive returns.
+                                    </p>
+                                    <div class="wow fadeInUp" data-wow-delay=".5s">
+                                        <a href="contact.html" class="theme-btn border-white">
+                                            <span class="icon-1">
+                                                <img src="assets/img/icon/10.svg" alt="img">
+                                            </span>
+                                            Book A Free Call
+                                            <span class="icon-2">
+                                                <img src="assets/img/icon/11.svg" alt="img">
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row g-5">
-                                <div class="col-12 col-lg-4">
-                                    <div class="main-sidebar sticky-style">
-                                        <div class="single-sidebar-widget">
-                                            <div class="wid-title">
-                                                <h4>All Services</h4>
-                                            </div>
-                                            <div class="service-widget-categories">
-                                                <ul>
-                                                    <li><a href="service-details.html">Web Development</a> <span><i class="fa-regular fa-arrow-right-long"></i></span></li>
-                                                    <li><a href="service-details.html">Content Marketing</a> <span><i class="fa-regular fa-arrow-right-long"></i></span></li>
-                                                    <li class="active"><a href="service-details.html">Social Media Mesketing</a><span><i class="fa-regular fa-arrow-right-long"></i></span></li>
-                                                    <li><a href="service-details.html">Affiliate Marketing</a> <span><i class="fa-regular fa-arrow-right-long"></i></span></li>
-                                                    <li><a href="service-details.html">Search Engine Marketing (SEM)</a> <span><i class="fa-regular fa-arrow-right-long"></i></span></li>
-                                                </ul>
-                                            </div>
+                            <div class="col-lg-6 d-flex">
+                                <div class="details-image" style="box-shadow: 0 30px 60px rgba(59, 249, 130, 0.15); border-radius: 24px; overflow: hidden; border: 1px solid rgba(59, 249, 130, 0.2); width: 100%; height: 100%; display: flex;">
+                                    <img src="assets/img/case-study/our-team-bg.png" alt="Globexify Tech Team" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 0;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Heritage Section Start -->
+                <section class="heritage-section landing-section">
+                    <div class="container">
+                        <div class="row g-5">
+                            <div class="col-lg-6">
+                                <div class="feature-card" style="background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 24px;">
+                                    <h3 style="color: #fff; font-weight: 800; margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
+                                        <i class="fa-solid fa-clock-rotate-left" style="color: #3BF982; margin: 0;"></i> Our Heritage
+                                    </h3>
+                                    <div class="roadmap-container" style="border-left: 2px dashed rgba(59, 249, 130, 0.2); margin-top: 0; padding-left: 25px;">
+                                        <div class="roadmap-step" style="margin-bottom: 25px;">
+                                            <div class="roadmap-step-num" style="color: #3BF982;">2005 - 2016</div>
+                                            <h5 class="roadmap-step-title" style="font-size: 16px;">B2B Marketplace</h5>
+                                            <p class="roadmap-step-desc" style="font-size: 13.5px;">Started our journey as a Global B2B Marketplace connecting international buyers and verified suppliers.</p>
+                                        </div>
+                                        <div class="roadmap-step" style="margin-bottom: 25px;">
+                                            <div class="roadmap-step-num" style="color: #3BF982;">2017 - 2019</div>
+                                            <h5 class="roadmap-step-title" style="font-size: 16px;">Digital Agency</h5>
+                                            <p class="roadmap-step-desc" style="font-size: 13.5px;">Transitioned to serve as a high-performance digital marketing agency, catering to scaling e-commerce clients worldwide.</p>
+                                        </div>
+                                        <div class="roadmap-step" style="margin-bottom: 0;">
+                                            <div class="roadmap-step-num" style="color: #3BF982;">2020 - Present</div>
+                                            <h5 class="roadmap-step-title" style="font-size: 16px;">E-commerce Automation & DFY</h5>
+                                            <p class="roadmap-step-desc" style="font-size: 13.5px;">Became the premier done-for-you e-commerce service provider, helping global clients generate stable passive returns.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-8">
-                                    <div class="service-details-content">
-                                        <h3>
-                                            Digital Marketing
-                                        </h3>
-                                        <p class="mb-4">
-                                            At tempus aenean sapien torquent sed diam class efficitur mus morbi eros dictum quam augue ac laor eet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue
-                                        </p>
-                                        <p class="mb-4">
-                                            pellentesque vulputate malesuada dictumst fames interdum cursus an te tellus porta ullamcorper accumsan non eu adipiscing integer venenatis sagittis arcu curae finibus ridi culus aliquam velit lobortis senectus vitae sollicitudin sit consectetuer ultricies rutrum parturient pede nisi nascetur habitant netus quisque elementum inceptos nam felis penatibus feugiat
-                                        </p>
-                                        <h3>
-                                            What We Provide
-                                        </h3>
-                                        <p class="mb-5">
-                                            At tempus aenean sapien torquent sed diam class efficitur mus morbi eros dictum quam augue ac laor eet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue
-                                        </p>
-                                        <div class="thumb">
-                                            <img src="assets/img/service/details-2.jpg" alt="img">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-card" style="background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 24px; height: 100%;">
+                                    <h3 style="color: #fff; font-weight: 800; margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
+                                        <i class="fa-solid fa-earth-americas" style="color: #3BF982; margin: 0;"></i> Global Operations
+                                    </h3>
+                                    <div class="roadmap-container" style="border-left: 2px dashed rgba(59, 249, 130, 0.2); margin-top: 0; padding-left: 25px;">
+                                        <div class="roadmap-step" style="margin-bottom: 25px;">
+                                            <div class="roadmap-step-num" style="color: #3BF982;">Global Footprint</div>
+                                            <h5 class="roadmap-step-title" style="font-size: 16px;">Local Expertise</h5>
+                                            <p class="roadmap-step-desc" style="font-size: 13.5px;">Our strategic operation hubs are located in USA, Pakistan, Dubai, and China for direct supplier and logistics access.</p>
                                         </div>
-                                        <h3>
-                                            The Challange
-                                        </h3>
-                                        <p>
-                                            At tempus aenean sapien torquent sed diam class efficitur mus morbi eros dictum quam augue ac laor eet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue
-                                        </p>
-                                        <div class="details-list-items">
-                                            <ul class="details-list">
-                                                <li><i class="fa-solid fa-circle-check"></i>Various analysis options.</li>
-                                                <li><i class="fa-solid fa-circle-check"></i>Advance Data analysis operation.</li>
-                                            </ul>
-                                            <ul class="details-list">
-                                                <li><i class="fa-solid fa-circle-check"></i>Page Load (time, size, number of requests).</li>
-                                                <li><i class="fa-solid fa-circle-check"></i>Advance Data analysis operation.</li>
+                                        <div class="roadmap-step" style="margin-bottom: 25px;">
+                                            <div class="roadmap-step-num" style="color: #3BF982;">24/7 Support</div>
+                                            <h5 class="roadmap-step-title" style="font-size: 16px;">Multi-Timezone Operations</h5>
+                                            <p class="roadmap-step-desc" style="font-size: 13.5px;">With dedicated teams spanning multiple continents, we manage your store, inventory, and listings round-the-clock.</p>
+                                        </div>
+                                        <div class="roadmap-step" style="margin-bottom: 0;">
+                                            <div class="roadmap-step-num" style="color: #3BF982;">Strategic Sourcing</div>
+                                            <h5 class="roadmap-step-title" style="font-size: 16px;">Global Insights & Relations</h5>
+                                            <p class="roadmap-step-desc" style="font-size: 13.5px;">We build direct relationships with registered brands and distributors worldwide, securing profitable wholesale catalog access.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section Start -->
+                <section class="features-section landing-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-10">
+                                <h3 style="color: #fff; font-weight: 800; text-align: center; margin-bottom: 50px;">Key Features of Amazon Seller Account</h3>
+                                <div class="row g-4">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-file-invoice"></i>
+                                            <h5>Product Listings</h5>
+                                            <p>Complete management of product listings, uploading images, writing optimized listings, setting competitive pricing, and mapping catalog entries.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-boxes-stacked"></i>
+                                            <h5>Inventory Management</h5>
+                                            <p>Advanced tracking tools for stock levels, managing replenishment rates across Amazon FBA centers, and setting alerts for seasonal order shifts.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-truck-moving"></i>
+                                            <h5>Order Fulfillment</h5>
+                                            <p>Coordination of shipping plans directly to Fulfillment by Amazon (FBA) storage hubs, taking customer returns and support off your plate.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-shipping-fast"></i>
+                                            <h5>Shipping Options</h5>
+                                            <p>Automated standard and expedited shipping configurations via Prime badge to ensure highest conversion rates and fastest delivery times.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-reply-all"></i>
+                                            <h5>Returns & Refunds</h5>
+                                            <p>Optimized systems to handle customer return claims and refund reconciliations in accordance with Amazon Seller policies.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-envelope-open-text"></i>
+                                            <h5>Customer Messaging</h5>
+                                            <p>Direct communication management with customers answering pre-sale questions or shipping enquiries to retain high metrics.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reselling Section Start -->
+                <section class="reselling-section landing-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-10">
+                                <h3 style="color: #fff; font-weight: 800; text-align: center; margin-bottom: 20px;">Reselling Established Brands on Amazon</h3>
+                                <p class="mb-5 text-center" style="font-size: 16px; max-width: 800px; margin: 0 auto 40px auto; color: rgba(255,255,255,0.7);">
+                                    With an Amazon Wholesale account, you can purchase and resell well-known brands that already have established demand on Amazon. This reduces the risk associated with launching new products since you’re selling items that customers are already searching for and purchasing.
+                                </p>
+                                <div class="row g-4">
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-tags"></i>
+                                            <h5>Established Brands</h5>
+                                            <p>Purchase & resell well-known brands that already have established search volumes and demand on Amazon.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-chart-line"></i>
+                                            <h5>High Sales Volume</h5>
+                                            <p>The wholesale model is highly scalable. You can easily increase order quantities as your business grows.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-box-open"></i>
+                                            <h5>Buy Box Advantage</h5>
+                                            <p>With competitive pricing and excellent account health metrics, we maximize your share of the Buy Box.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-truck-ramp-box"></i>
+                                            <h5>Fulfillment by Amazon</h5>
+                                            <p>We outsource all warehousing, packing, and shipping to Amazon FBA, unlocking Amazon Prime badge eligibility.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                                            <h5>Organic Sales</h5>
+                                            <p>Branded products generate strong organic search traffic, resulting in consistent sales without heavy PPC spending.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="feature-card">
+                                            <i class="fa-solid fa-shield-halved"></i>
+                                            <h5>Brand Protection</h5>
+                                            <p>We work exclusively with authorized suppliers to ensure invoices are valid, preventing account suspensions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Roadmap Section Start -->
+                <section class="roadmap-section landing-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-10">
+                                <h3 style="color: #fff; font-weight: 800; text-align: center; margin-bottom: 20px;">Roadmap to Success</h3>
+                                <p class="mb-5 text-center" style="font-size: 16px; max-width: 800px; margin: 0 auto 40px auto; color: rgba(255,255,255,0.7);">
+                                    Here is the step-by-step roadmap we follow to set up, launch, optimize, and scale your Amazon Wholesale FBA store to $10,000+ monthly revenue.
+                                </p>
+                                <div class="row g-4">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card" style="border-left: 4px solid #3BF982;">
+                                            <div class="roadmap-step-num">Step 01</div>
+                                            <h5 class="roadmap-step-title">Onboarding</h5>
+                                            <p class="roadmap-step-desc">Establish terms, complete the onboarding setup fee, and submit initial documents to initialize the store project.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card" style="border-left: 4px solid #3BF982;">
+                                            <div class="roadmap-step-num">Step 02</div>
+                                            <h5 class="roadmap-step-title">Setup & Application</h5>
+                                            <p class="roadmap-step-desc">Our team drafts and submits applications for your Amazon Seller Account, business registrations, and sales permits.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card" style="border-left: 4px solid #3BF982;">
+                                            <div class="roadmap-step-num">Step 03</div>
+                                            <h5 class="roadmap-step-title">Product & Brand Sourcing</h5>
+                                            <p class="roadmap-step-desc">We scan thousands of wholesale catalogs to find high-velocity, high-margin products and secure brand approvals.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card" style="border-left: 4px solid #3BF982;">
+                                            <div class="roadmap-step-num">Step 04</div>
+                                            <h5 class="roadmap-step-title">Launch & Prep Coordination</h5>
+                                            <p class="roadmap-step-desc">Inventory is purchased, shipped to prep centers for inspection and FBA labeling, and delivered directly to Amazon warehouses.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card" style="border-left: 4px solid #3BF982;">
+                                            <div class="roadmap-step-num">Step 05</div>
+                                            <h5 class="roadmap-step-title">Optimization & Replenishment</h5>
+                                            <p class="roadmap-step-desc">We track daily sales, Buy Box share, inventory health index, and automatically reorder products before stocks run low.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="feature-card" style="border-left: 4px solid #3BF982;">
+                                            <div class="roadmap-step-num">Step 06</div>
+                                            <h5 class="roadmap-step-title">$10,000+ Monthly Sales</h5>
+                                            <p class="roadmap-step-desc">We scale purchase budgets and brand partnerships to stabilize your store at $10,000+ in monthly sales with 15% - 20% ROI.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Package Section Start -->
+                <section class="package-section landing-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-10">
+                                <h3 style="color: #fff; font-weight: 800; text-align: center; margin-bottom: 20px;">What Our DFY Package Includes</h3>
+                                <p class="mb-5 text-center" style="font-size: 16px; max-width: 800px; margin: 0 auto 40px auto; color: rgba(255,255,255,0.7);">
+                                    Our comprehensive Done-For-You service handles every aspect of store creation, marketing, and logistics.
+                                </p>
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="package-card">
+                                            <h4>Setup & Digital Presence</h4>
+                                            <ul class="package-list">
+                                                <li><i class="fa-solid fa-circle-check"></i> LLC Registration & EIN Support</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Reseller Certificate Acquisition</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Amazon Seller Account Setup</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Professional Website Development</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Domain & Hosting Setup</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Business Email Setup</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="faq-wrapper mt-5">
-                                        <div class="faq-accordion-items">
-                                            <div class="faq-accordion">
-                                                <div class="accordion" id="accordion">
-                                                    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".3s">
-                                                        <h5 class="accordion-header">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                                                Why Is SEO Important For Small Business?
-                                                            </button>
-                                                        </h5>
-                                                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                                            <div class="accordion-body">
-                                                                Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante commodo maximus 
-                                                            </div>
+                                    <div class="col-md-6">
+                                        <div class="package-card">
+                                            <h4>Store Management</h4>
+                                            <ul class="package-list">
+                                                <li><i class="fa-solid fa-circle-check"></i> High-Demand Product Research</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Wholesale Supplier & Brand Research</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Securing Brand Approvals</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Gated / Un-Gated Check</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Prep Center Coordination & Logistics</li>
+                                                <li><i class="fa-solid fa-circle-check"></i> Daily Order & Inventory Management</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section Start -->
+                <section class="faq-section landing-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-10">
+                                <h3 style="color: #fff; font-weight: 800; text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h3>
+                                <div class="faq-wrapper mt-4">
+                                    <div class="faq-accordion-items">
+                                        <div class="faq-accordion">
+                                            <div class="accordion" id="accordion">
+                                                <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".3s">
+                                                    <h5 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                                                            Are business registration and legal fees included in the package?
+                                                        </button>
+                                                    </h5>
+                                                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            No, any legal registration fees (such as state filing fees for LLC creation, EIN processing, and Sales Tax Reseller Permits) are paid directly to government portals by the client. We guide and handle the application process for you.
                                                         </div>
                                                     </div>
-                                                    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".5s">
-                                                        <h5 class="accordion-header">
-                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                                                                How do I choose the best SEO Agency?
-                                                            </button>
-                                                        </h5>
-                                                        <div id="faq2" class="accordion-collapse show" data-bs-parent="#accordion">
-                                                            <div class="accordion-body">
-                                                                Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante commodo maximus 
-                                                            </div>
+                                                </div>
+                                                <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".5s">
+                                                    <h5 class="accordion-header">
+                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="true" aria-controls="faq2">
+                                                            Who pays for inventory and third-party logistics?
+                                                        </button>
+                                                    </h5>
+                                                    <div id="faq2" class="accordion-collapse show" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            The client is responsible for purchasing the inventory from brands/distributors. All third-party services (such as prep center packaging, labeling, shipping fees, and Amazon seller storage fees) are also paid directly by the client.
                                                         </div>
                                                     </div>
-                                                    <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".7s">
-                                                        <h5 class="accordion-header">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                                                                Better Security And Faster Server?
-                                                            </button>
-                                                        </h5>
-                                                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                                            <div class="accordion-body">
-                                                                Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante commodo maximus 
-                                                            </div>
+                                                </div>
+                                                <div class="accordion-item mb-3 wow fadeInUp" data-wow-delay=".7s">
+                                                    <h5 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                                            How does Fulfillment by Amazon (FBA) benefit my store?
+                                                        </button>
+                                                    </h5>
+                                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            With Amazon FBA, Amazon stores, packs, and ships your products. This automates shipping and customer service, qualifies your listings for Amazon Prime shipping, increases your Buy Box winning percentage, and greatly scales store conversion.
                                                         </div>
                                                     </div>
-                                                    <div class="accordion-item mb-0 wow fadeInUp" data-wow-delay=".7s">
-                                                        <h5 class="accordion-header">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                                                                Deployment Within Few Minutes
-                                                            </button>
-                                                        </h5>
-                                                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                                            <div class="accordion-body">
-                                                                Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante commodo maximus 
-                                                            </div>
+                                                </div>
+                                                <div class="accordion-item mb-0 wow fadeInUp" data-wow-delay=".9s">
+                                                    <h5 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                                            What is the expected ROI and timeline to start selling?
+                                                        </button>
+                                                    </h5>
+                                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                                        <div class="accordion-body">
+                                                            Usually, account setup, brand approvals, and first inventory launch take between 30 to 45 days. The average estimated Return on Investment (ROI) for Amazon Wholesale FBA ranges between 15% to 25%, depending on product categories and market competition.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -508,35 +824,43 @@
                 </section>
 
                 <!-- Cta Section Start -->
-                <section class="cta-section fix section-padding pt-0 dark-bg-style black-bg">
+                <section class="cta-section fix section-padding section-bg margin-top-10 pt-0">
                     <div class="container">
-                        <div class="cta-wrapper bg-cover" style="background-image: url('assets/img/cta/cta-bg.jpg');">
-                            <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind?Let’s make something great together</h2>
-                            <a href="contact.html" class="theme-btn border-white wow fadeInUp" data-wow-delay=".5s">
-                                <span class="icon-1">
-                                    <img src="assets/img/icon/10.svg" alt="img">
-                                </span>
-                                get in touch
-                                <span class="icon-2">
-                                    <img src="assets/img/icon/11.svg" alt="img">
-                                </span>
-                            </a>
+                        <div class="cta-wrapper"
+                            style="background: radial-gradient(circle at 20% 30%, rgba(59, 249, 130, 0.08), transparent 40%), radial-gradient(circle at 80% 70%, rgba(59, 249, 130, 0.08), transparent 40%), #0A0E0C; position: relative; overflow: hidden; border-radius: 30px; border: 1px solid rgba(59, 249, 130, 0.1);">
+                            <!-- Grid Pattern Overlay -->
+                            <div
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(59, 249, 130, 0.1) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0;">
+                            </div>
+                            <div style="position: relative; z-index: 1;">
+                                <h2 class="wow fadeInUp" data-wow-delay=".3s">Have an idea in your mind? Let’s make
+                                    something great together</h2>
+                                <a href="contact.html" class="theme-btn border-white wow fadeInUp" data-wow-delay=".5s">
+                                    <span class="icon-1">
+                                        <img src="assets/img/icon/10.svg" alt="img">
+                                    </span>
+                                    get in touch
+                                    <span class="icon-2">
+                                        <img src="assets/img/icon/11.svg" alt="img">
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Footer Section Start -->
-                <footer class="footer-section dark-section-bg">
+                <footer class="footer-section">
                     <div class="container custom-container">
-                        <div class="footer-wrapper dark-text-style">
+                        <div class="footer-wrapper">
                             <div class="footer-wrapper-items">
                                 <div class="footer-social-contact wow fadeInUp" data-wow-delay=".3s">
                                     <ul class="contact-list">
                                         <li>
-                                            <a href="mailto:info@example.com">info@example.com</a>
+                                            <a href="mailto:info@globexifytech.com">info@globexifytech.com</a>
                                         </li>
                                         <li>
-                                            <a href="tel:+19876543210">+1 987 654 3210</a>
+                                            <a href="tel:+16615606656">+1 (661) 560-6656</a>
                                         </li>
                                     </ul>
                                     <div class="social-icon d-flex align-items-center">
@@ -548,17 +872,17 @@
                                 </div>
                                 <div class="footer-author wow fadeInUp" data-wow-delay=".5s">
                                     <span>Designer by</span>
-                                    <h4><a href="index.html">gramentheme.com</a></h4>
+                                    <h4><a href="#">devaxon.com</a></h4>
                                 </div>
                                 <p class="wow fadeInUp" data-wow-delay=".7s">
-                                    ©2025 <br>
-                                    GlobexifyTech design <br>
+                                    ©2026 <br>
+                                    Globexify Tech E-commerce <br>
                                     all rights reserved
                                 </p>
                             </div>
-                            <a href="index.html" class="GlobexifyTech-text">
-                                <img src="assets/img/GlobexifyTech-white.svg" alt="img" class="wow img-custom-anim-bottom">
-                            </a>
+                            <div class="footer-bottom-text" style="width: 100%; text-align: center; margin-top: 80px;">
+                                <h1 style="font-size: 18vw; font-weight: 900; color: #3BF982; opacity: 0.1; text-transform: uppercase; line-height: 0.8; margin-bottom: -20px; letter-spacing: -5px; pointer-events: none;">GLOBEXIFY</h1>
+                            </div>
                         </div>
                     </div>
                 </footer>
