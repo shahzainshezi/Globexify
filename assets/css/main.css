@@ -6719,8 +6719,9 @@ input.main-search-input::placeholder {
   }
 }
 .section-title h6 {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--theme);
   line-height: 1;

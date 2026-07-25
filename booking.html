@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Globexify Tech">
+    <meta name="description" content="Apply for a 1-on-1 Growth Strategy Session - Globexify Tech">
+    
+    <!-- ======== Page title ============ -->
+    <title>Book a Strategy Call | Globexify Tech</title>
+    
+    <!--<< Favicon >>-->
+    <link rel="shortcut icon" href="assets/img/favicon.svg">
+    
+    <!--<< CSS Files >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Google Fonts (Exact Home Page Fonts: Teko & Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Funnel Page Styling (Matching Home Page Theme & Teko Font) -->
+    <style>
+        :root {
+            --theme-green: #3BF982;
+            --theme-dark-bg: #0A0E0C;
+            --card-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-muted: rgba(255, 255, 255, 0.65);
+            --pill-bg: rgba(255, 255, 255, 0.04);
+            --pill-hover-border: rgba(59, 249, 130, 0.4);
+            --pill-active-bg: #3BF982;
+            --pill-active-text: #0A0E0C;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0A0E0C !important;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glow Backgrounds */
+        .ambient-glow-1 {
+            position: fixed;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(59, 249, 130, 0.12) 0%, rgba(10, 14, 12, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            bottom: -150px;
+            right: -100px;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(59, 249, 130, 0.08) 0%, rgba(10, 14, 12, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Header Section - Centered Brand Logo using Home Page Font (Teko) */
+        .funnel-header {
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-logo-text {
+            font-family: 'Teko', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1;
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo-text:hover {
+            transform: scale(1.04);
+            color: #ffffff;
+        }
+
+        .brand-logo-text .text-green {
+            color: #3BF982;
+        }
+
+        /* Main Funnel Container */
+        .funnel-container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 10px 20px 60px 20px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* Hero Text Area */
+        .funnel-hero-text {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .badge-funnel {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 20px;
+            background: rgba(59, 249, 130, 0.1);
+            border: 1px solid rgba(59, 249, 130, 0.3);
+            border-radius: 50px;
+            color: #3BF982;
+            font-family: 'Teko', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .funnel-hero-text h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(16px, 3.4vw, 36px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            display: block;
+            width: 100%;
+        }
+
+        .funnel-hero-text h1 span {
+            color: #3BF982;
+        }
+
+        .funnel-hero-text p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Lead Form Card Container */
+        .lead-form-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 45px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .lead-form-card {
+                padding: 25px;
+                border-radius: 18px;
+            }
+            .funnel-hero-text h1 {
+                font-size: 38px;
+            }
+            .brand-logo-text {
+                font-size: 34px;
+            }
+        }
+
+        /* Form Labels & Controls */
+        .form-section-title {
+            font-family: 'Teko', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-section-title i {
+            color: #3BF982;
+            font-size: 18px;
+        }
+
+        .form-section-title span.optional-tag {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .form-group-item {
+            margin-bottom: 32px;
+        }
+
+        .custom-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #ffffff;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .custom-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #3BF982;
+            box-shadow: 0 0 0 4px rgba(59, 249, 130, 0.15);
+        }
+
+        .custom-input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Option Pills Grid */
+        .pills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+            gap: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .pills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .pill-item {
+            position: relative;
+        }
+
+        .pill-item input[type="radio"],
+        .pill-item input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .pill-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 16px;
+            background: var(--pill-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            user-select: none;
+            transition: all 0.25s ease;
+        }
+
+        .pill-label:hover {
+            background: rgba(59, 249, 130, 0.08);
+            border-color: var(--pill-hover-border);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .pill-item input:checked + .pill-label {
+            background: var(--pill-active-bg);
+            border-color: var(--pill-active-bg);
+            color: var(--pill-active-text);
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(59, 249, 130, 0.3);
+        }
+
+        .pill-label i.check-icon {
+            font-size: 12px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s ease;
+        }
+
+        .pill-item input:checked + .pill-label i.check-icon {
+            opacity: 1;
+            transform: scale(1);
+            color: #0A0E0C;
+        }
+
+        /* Submit Button (Matching Home Theme Button - Teko Font) */
+        .btn-submit-funnel {
+            width: 100%;
+            padding: 16px 20px;
+            background-color: #3BF982;
+            border: 1px solid #3BF982;
+            border-radius: 100px;
+            color: #0A0E0C;
+            font-family: 'Teko', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(59, 249, 130, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1;
+        }
+
+        .btn-submit-funnel:hover {
+            transform: translateY(-3px);
+            background-color: #ffffff;
+            border-color: #ffffff;
+            color: #0A0E0C;
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-submit-funnel i {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-submit-funnel:hover i {
+            transform: translateX(6px);
+        }
+
+        /* Success / Calendly Container */
+        #booking-success-container {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-banner {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(59, 249, 130, 0.08);
+            border: 1px solid rgba(59, 249, 130, 0.25);
+            border-radius: 18px;
+            margin-bottom: 30px;
+        }
+
+        .success-banner i {
+            font-size: 48px;
+            color: #3BF982;
+            margin-bottom: 12px;
+        }
+
+        .success-banner h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .success-banner p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 15px;
+        }
+
+        /* Minimal Footer */
+        .funnel-footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            z-index: 2;
+            background: #0A0E0C;
+        }
+
+        .social-icons-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .social-icons-footer a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons-footer a:hover {
+            background: #3BF982;
+            border-color: #3BF982;
+            color: #0A0E0C;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 249, 130, 0.4);
+        }
+
+        .copyright-text {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient Glowing Backgrounds -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Header Section (Only Center Home Brand Logo - Teko Font) -->
+    <header class="funnel-header">
+        <a href="index.html" class="brand-logo-text">
+            <span class="text-green">Globexify</span> Tech
+        </a>
+    </header>
+
+    <!-- Main Funnel Container -->
+    <main class="funnel-container">
+        
+        <!-- Hero Header -->
+        <div class="funnel-hero-text animate__animated animate__fadeInDown">
+            <div class="badge-funnel">
+                <i class="fa-solid fa-bolt"></i> 1-on-1 Growth Application
+            </div>
+            <h1>Ready To Scale Your Business? <span>Apply Below</span></h1>
+            <p>Instead of letting everyone book a call immediately, we request a short application to ensure we are a mutual fit and can deliver maximum ROI for your brand.</p>
+        </div>
+
+        <!-- Lead Form Card -->
+        <div class="lead-form-card animate__animated animate__fadeInUp" id="form-wrapper">
+            <form id="leadApplicationForm">
+
+                <!-- 1. Full Name -->
+                <div class="form-group-item">
+                    <label class="form-section-title" for="fullName">
+                        <i class="fa-solid fa-user"></i> Full Name <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" id="fullName" class="custom-input" placeholder="e.g. Alexander Wright" required>
+                    <div class="error-message" id="err-fullName">Please enter your full name.</div>
+                </div>
+
+                <!-- 2. Business Information (Optional) -->
+                <div class="form-group-item">
+                    <label class="form-section-title">
+                        <i class="fa-solid fa-briefcase"></i> Business Information <span class="optional-tag">Optional</span>
+                    </label>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="url" id="websiteUrl" class="custom-input" placeholder="Website URL (e.g. https://yourbrand.com)">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="businessName" class="custom-input" placeholder="Business Name">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Revenue -->
+                <div class="form-group-item">
+                    <label class="form-section-title">
+                        <i class="fa-solid fa-chart-line"></i> Current Monthly Revenue <span class="text-danger">*</span>
+                    </label>
+                    <div class="pills-grid">
+                        <div class="pill-item">
+                            <input type="radio" name="revenue" id="rev1" value="Under $1k/month" required>
+                            <label for="rev1" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Under $1k/month
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="revenue" id="rev2" value="$1k–10k">
+                            <label for="rev2" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> $1k–$10k
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="revenue" id="rev3" value="$10k–50k">
+                            <label for="rev3" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> $10k–$50k
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="revenue" id="rev4" value="$50k+">
+                            <label for="rev4" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> $50k+
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="err-revenue">Please select your monthly revenue.</div>
+                </div>
+
+                <!-- 4. Platform (Multiple selection) -->
+                <div class="form-group-item">
+                    <label class="form-section-title">
+                        <i class="fa-solid fa-store"></i> Platform(s) You Sell On <span class="optional-tag">Multiple selection</span>
+                    </label>
+                    <div class="pills-grid">
+                        <div class="pill-item">
+                            <input type="checkbox" name="platform" id="plat-shopify" value="Shopify">
+                            <label for="plat-shopify" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Shopify
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="checkbox" name="platform" id="plat-amazon" value="Amazon">
+                            <label for="plat-amazon" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Amazon
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="checkbox" name="platform" id="plat-walmart" value="Walmart">
+                            <label for="plat-walmart" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Walmart
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="checkbox" name="platform" id="plat-tiktok" value="TikTok Shop">
+                            <label for="plat-tiktok" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> TikTok Shop
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="checkbox" name="platform" id="plat-ebay" value="Ebay">
+                            <label for="plat-ebay" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Ebay
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Biggest Challenge -->
+                <div class="form-group-item">
+                    <label class="form-section-title">
+                        <i class="fa-solid fa-bullseye"></i> What Is Your Biggest Challenge? <span class="text-danger">*</span>
+                    </label>
+                    <div class="pills-grid">
+                        <div class="pill-item">
+                            <input type="radio" name="challenge" id="ch1" value="No traffic" required>
+                            <label for="ch1" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> No traffic
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="challenge" id="ch2" value="Low conversion">
+                            <label for="ch2" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Low conversion
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="challenge" id="ch3" value="Low sales">
+                            <label for="ch3" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Low sales
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="challenge" id="ch4" value="Ads not working">
+                            <label for="ch4" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Ads not working
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="challenge" id="ch5" value="Website redesign">
+                            <label for="ch5" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Website redesign
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="challenge" id="ch6" value="Brand identity">
+                            <label for="ch6" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Brand identity
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="err-challenge">Please select your primary challenge.</div>
+                </div>
+
+                <!-- 6. Budget -->
+                <div class="form-group-item">
+                    <label class="form-section-title">
+                        <i class="fa-solid fa-wallet"></i> Estimated Monthly Growth Budget <span class="text-danger">*</span>
+                    </label>
+                    <div class="pills-grid">
+                        <div class="pill-item">
+                            <input type="radio" name="budget" id="b1" value="Under $500" required>
+                            <label for="b1" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Under $500
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="budget" id="b2" value="$500–1,500">
+                            <label for="b2" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> $500–$1,500
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="budget" id="b3" value="$1,500–5,000">
+                            <label for="b3" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> $1,500–$5,000
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="budget" id="b4" value="$5,000+">
+                            <label for="b4" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> $5,000+
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="err-budget">Please select your estimated budget.</div>
+                </div>
+
+                <!-- 7. Timeline -->
+                <div class="form-group-item">
+                    <label class="form-section-title">
+                        <i class="fa-solid fa-calendar-days"></i> How Soon Do You Want To Start? <span class="text-danger">*</span>
+                    </label>
+                    <div class="pills-grid">
+                        <div class="pill-item">
+                            <input type="radio" name="timeline" id="t1" value="ASAP" required>
+                            <label for="t1" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> ASAP
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="timeline" id="t2" value="This month">
+                            <label for="t2" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> This month
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="timeline" id="t3" value="3 months">
+                            <label for="t3" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Within 3 months
+                            </label>
+                        </div>
+                        <div class="pill-item">
+                            <input type="radio" name="timeline" id="t4" value="Just researching">
+                            <label for="t4" class="pill-label">
+                                <i class="fa-solid fa-check check-icon"></i> Just researching
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="err-timeline">Please select your timeline.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit-funnel">
+                    Submit Application & Schedule Call <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+        </div>
+
+        <!-- Success & Calendly Embedding Section -->
+        <div id="booking-success-container" class="lead-form-card mt-4">
+            <div class="success-banner">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>Application Pre-Approved! 🎉</h3>
+                <p>Thank you for submitting your details. Pick a convenient time on the calendar below for your 1-on-1 Strategy Call.</p>
+            </div>
+
+            <!-- Calendly Inline Widget -->
+            <div class="calendly-embed-wrapper" style="min-height: 650px; border-radius: 16px; overflow: hidden; background: #ffffff;">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/d/354-94v-9g9?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://calendly.com" target="_blank" class="btn btn-outline-light btn-sm px-4 py-2" style="border-radius: 30px; border-color: #3BF982; color: #3BF982;">
+                    <i class="fa-solid fa-external-link me-2"></i> Open Calendly in New Tab
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="funnel-footer">
+        <div class="social-icons-footer">
+            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p class="copyright-text">&copy; 2026 Globexify Tech. All rights reserved.</p>
+    </footer>
+
+    <!-- Form Validation Script -->
+    <script>
+        document.getElementById('leadApplicationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+            // 1. Full Name
+            const fullName = document.getElementById('fullName').value.trim();
+            if (!fullName) {
+                document.getElementById('err-fullName').style.display = 'block';
+                isValid = false;
+            }
+
+            // 2. Revenue
+            const revenue = document.querySelector('input[name="revenue"]:checked');
+            if (!revenue) {
+                document.getElementById('err-revenue').style.display = 'block';
+                isValid = false;
+            }
+
+            // 3. Challenge
+            const challenge = document.querySelector('input[name="challenge"]:checked');
+            if (!challenge) {
+                document.getElementById('err-challenge').style.display = 'block';
+                isValid = false;
+            }
+
+            // 4. Budget
+            const budget = document.querySelector('input[name="budget"]:checked');
+            if (!budget) {
+                document.getElementById('err-budget').style.display = 'block';
+                isValid = false;
+            }
+
+            // 5. Timeline
+            const timeline = document.querySelector('input[name="timeline"]:checked');
+            if (!timeline) {
+                document.getElementById('err-timeline').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('form-wrapper').style.display = 'none';
+                document.querySelector('.funnel-hero-text').style.display = 'none';
+                
+                const successContainer = document.getElementById('booking-success-container');
+                successContainer.style.display = 'block';
+                successContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    </script>
+</body>
+
+</html>
